@@ -1,0 +1,20 @@
+// BASE STYLES
+
+@import 
+	'base/vars',
+	'base/mixins',
+	'base/typography',
+	'base/global';
+
+@import 'layouts/flex-grid';
+
+@import 'components/button',
+				'components/footer',
+				'components/header';
+
+@import 'pages/about',
+				'pages/cart',
+				'pages/checkout',
+				'pages/collection',
+				'pages/home',
+				'pages/product';

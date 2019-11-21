@@ -1,0 +1,52 @@
+{
+  "name": "marissa-shopify-andbox",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marissa shopify sandbox build tasks and dependencies.",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint",
+    "css": "node-sass styles/main.scss | postcss -u autoprefixer | cleancss -O1 optimizeFontWeight:off --skip-rebase -o ../assets/theme.css.liquid",
+    "js": "webpack --progress",
+    "js:css": "npm run js && npm run css",
+    "watch:css": "onchange 'styles/**/*.scss' -- npm run css",
+    "watch:js": "webpack --progress --watch",
+    "watch:theme:dev": "cd ../ && theme watch --env=development",
+    "watch:all:dev": "npm-run-all -p watch:css watch:js watch:theme:dev",
+    "upload:defaults:dev": "cd ../ && theme upload /snippets /sections /templates /assets --env=development --verbose",
+    "upload:assets:dev": "cd ../ && theme upload /assets --env=development --verbose",
+    "replace:theme:dev": "npm run js:css && cd ../ && theme deploy --env=development",
+    "watch:theme:prod": "cd ../ && theme watch --env=production",
+    "watch:all:prod": "npm-run-all -p watch:css watch:js watch:theme:prod",
+    "upload:defaults:prod": "cd ../ && theme upload /snippets /sections /templates /assets --env=production --verbose",
+    "upload:assets:prod": "cd ../ && theme upload /assets --env=production --verbose",
+    "replace:theme:prod": "npm run js:css && cd ../ && theme deploy --env=production"
+  },
+  "author": "Marissa Traina",
+  "license": "ISC",
+  "dependencies": {
+    "rivets": "^0.9.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.22.0",
+    "clean-css-cli": "^4.0.12",
+    "exports-loader": "^0.6.4",
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.3.1",
+    "mixitup": "^3.3.1",
+    "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^2.6.0",
+    "webpack": "^2.3.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
