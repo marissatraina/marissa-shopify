@@ -1,5 +1,5 @@
-# Mindbodygreen E-Commerce
-Mindbodygreen E-Commerce Site 
+# Marissa Shopify Sandbox
+Marissa Shopify Site 
 
 ### Build Setup
 
@@ -25,4 +25,5 @@ or<br>
 `npm run watch:theme`  
 To run themekit commands directly, navigate to the `root` directory instead
 ##### All Watch Tasks
-`npm run watch:all`
+`npm run watch:all:dev`
+`npm run watch:all:prod`
