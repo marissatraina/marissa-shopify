@@ -8,7 +8,10 @@
         "external": "Apre un sito esterno.",
         "new_window_and_external": "Apre un sito esterno in una nuova finestra."
       },
-      "refresh_page": "scegliendo una selezione si ottiene un aggiornamento completo della pagina"
+      "refresh_page": "Scegliendo una selezione si ottiene un aggiornamento completo della pagina.",
+      "selection_help": "Premi la barra spaziatrice e i tasti freccia per effettuare una selezione.",
+      "unit_price_separator": "per",
+      "error": "Errore"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -47,29 +50,36 @@
       }
     },
     "search": {
-      "no_results_html": "Si prega di provare un termine di ricerca diverso o tornare alla <a href=\"/\">homepage</a>.",
       "empty_search_message": "Il campo di ricerca non può essere vuoto",
-      "results_with_count": {
-        "one": "{{ count }} risultato per \"{{ terms }}\"",
-        "other": "{{ count }} risultati per \"{{ terms }}\""
-      },
       "title": "Cerca nel nostro sito",
       "placeholder": "Cerca",
       "submit": "Invia",
       "close": "Chiudi ricerca",
       "heading": {
         "one": "Risultato della ricerca",
-        "other": "Risultati di ricerca"
+        "other": "Risultati della ricerca"
+      },
+      "search_for": "Cerca",
+      "loading": "Caricamento",
+      "clear_search_term": "Cancella termine ricerca",
+      "number_of_results": "{{ result_number }} di {{ results_count }}",
+      "products": "Prodotti",
+      "number_of_results_found": "{{ results_count }} risultati trovati",
+      "one_result_found": "1 risultato trovato",
+      "no_results": "Controlla l'ortografia o prova una parola diversa.",
+      "results_with_count": {
+        "one": "{{ count }} risultato per “{{ terms }}”",
+        "other": "{{ count }} risultati per “{{ terms }}”"
       }
     },
     "newsletter_form": {
       "newsletter_email": "Iscriviti alla nostra mailing list",
       "email_placeholder": "Indirizzo email",
       "confirmation": "Grazie per l'iscrizione!",
-      "submit": "Registrati"
+      "submit": "Iscriviti"
     },
     "filters": {
-      "show_more": "Mostra di Più",
+      "show_more": "Mostra di più",
       "show_less": "Mostra di meno"
     },
     "payment": {
@@ -77,6 +87,9 @@
     },
     "currency": {
       "dropdown_label": "Valuta"
+    },
+    "language": {
+      "dropdown_label": "Lingua"
     }
   },
   "sections": {
@@ -90,7 +103,9 @@
     },
     "featured_product": {
       "title": "Prodotto presentato",
-      "gallery_thumbnail_alt": "Carica l'immagine nel visualizzatore di Gallery, {{ imageAlt }}"
+      "gallery_thumbnail_alt": "Carica l'immagine nel visualizzatore di Gallery, {{ imageAlt }}",
+      "video_thumbnail_alt": "Carica e avvia il video nel visualizzatore di galleria, {{ imageAlt }}",
+      "model_thumbnail_alt": "Carica il modello 3D nel visualizzatore di Gallery, {{ imageAlt }}"
     },
     "map": {
       "address_error": "Errore durante la ricerca dell'indirizzo",
@@ -100,10 +115,10 @@
       "section_heading": "Posizione"
     },
     "video": {
-      "play": "Play video",
-      "pause": "Metti video in pausa",
-      "resume": "Riprendi video",
-      "close": "Chiudi il video"
+      "play": "Riproduci il video {{ video_title }}",
+      "pause": "Metti in pausa il video {{ video_title }}",
+      "resume": "Riprendi il video {{ video_title }}",
+      "close": "Chiudi il video {{ video_title }}"
     }
   },
   "blogs": {
@@ -116,7 +131,12 @@
       "read_more": "Leggi di più",
       "read_more_title": "Leggi di più: {{ title }}",
       "back_to_blog": "Torna a {{ title }}",
-      "tags": "Tag"
+      "tags": "Tag",
+      "article_with_count": {
+        "one": "1 articolo",
+        "other": "{{ count }} articoli",
+        "zero": "0 articoli"
+      }
     },
     "comments": {
       "title": "Lascia un commento",
@@ -136,28 +156,45 @@
   },
   "cart": {
     "general": {
-      "title": "Tuo carrello",
+      "title": "Il tuo carrello",
       "note": "Aggiungi una nota al tuo ordine",
+      "removed_item_html": "<span class=\"cart__removed-product-details\">({{ quantity }}) {{ link }}</span> sono stati rimossi dal carrello.",
       "remove": "Rimuovi",
-      "subtotal": "Totale parziale",
+      "subtotal": "Subtotale",
       "savings": "Stai risparmiando",
-      "taxes_and_shipping_at_checkout": "Tasse e spese di spedizione calcolate al momento del pagamento",
-      "taxes_and_shipping_policy_at_checkout_html": "Tasse e <a href=\"{{ link }}\">spese di spedizione</a> calcolate al momento del pagamento",
-      "taxes_included_but_shipping_at_checkout": "Tasse incluse e spese di spedizione calcolate al momento del pagamento",
-      "taxes_included_and_shipping_policy_html": "Tasse incluse. <a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento.",
+      "taxes_and_shipping_at_checkout": "Imposte e spese di spedizione calcolate al momento del pagamento",
+      "taxes_and_shipping_policy_at_checkout_html": "Imposte e <a href=\"{{ link }}\">spese di spedizione</a> calcolate al momento del pagamento",
+      "taxes_included_but_shipping_at_checkout": "Imposte incluse e spese di spedizione calcolate al momento del pagamento",
+      "taxes_included_and_shipping_policy_html": "Imposte incluse. <a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento.",
       "update": "Aggiornamento",
       "checkout": "Check-out",
       "empty": "Il tuo carrello è attualmente vuoto.",
       "cookies_required": "Abilita i cookie per utilizzare il carrello",
-      "edit": "Modifica",
-      "cancel": "Annulla",
-      "continue_shopping": "Continua lo shopping"
+      "continue_shopping": "Continua lo shopping",
+      "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Riprova più tardi."
     },
     "label": {
+      "discounted_total": "Totale scontato",
       "product": "Prodotto",
       "price": "Prezzo",
+      "price_column": "Vedi la colonna Prezzo per i dettagli dello sconto.",
+      "product_details": "Dettagli prodotto",
       "quantity": "Quantità",
-      "total": "Totale"
+      "qty": "Quantità",
+      "regular_total": "Totale di listino",
+      "remove": "Rimuovi {{ product }}",
+      "total": "Totale",
+      "update": "Aggiornamento"
+    },
+    "popup": {
+      "added_to_cart": "Appena aggiunto al carrello",
+      "cart_count": {
+        "one": "{{ count }} articolo",
+        "other": "{{ count }} articoli"
+      },
+      "product_details": "Dettagli prodotto",
+      "quantity": "Quantità",
+      "quantity_label": "Quantità: {{ quantity_count }}"
     }
   },
   "collections": {
@@ -171,12 +208,15 @@
       },
       "collection_label": "Collezione"
     },
+    "catalog": {
+      "title": "Catalogo"
+    },
     "sorting": {
       "title": "Ordina per"
     },
     "filters": {
       "title_tags": "Filtra per",
-      "all_tags": "Tutti i prodotti"
+      "all_tags": "Tutte i prodotti"
     }
   },
   "contact": {
@@ -207,16 +247,16 @@
     },
     "addresses": {
       "title": "I tuoi indirizzi",
-      "default": "Default",
+      "default": "Predefinito",
       "add_new": "Aggiungi un nuovo indirizzo",
       "edit_address": "Modifica indirizzo",
       "first_name": "Nome",
       "last_name": "Cognome",
       "company": "Azienda",
-      "address1": "Indirizzo - campo 1",
-      "address2": "Indirizzo - campo 2",
+      "address1": "Indirizzo",
+      "address2": "Interno, scala, ecc.",
       "city": "Città",
-      "country": "Paese",
+      "country": "Paese/Regione",
       "province": "Provincia",
       "zip": "CAP",
       "phone": "Numero di telefono",
@@ -240,6 +280,7 @@
     "orders": {
       "title": "Cronologia degli ordini",
       "order_number": "Ordine",
+      "order_number_link": "Numero ordine {{ number }}",
       "date": "Data",
       "payment_status": "Stato del pagamento",
       "fulfillment_status": "Stato di evasione ordine",
@@ -248,8 +289,8 @@
     },
     "order": {
       "title": "Ordine {{ name }}",
-      "date": "Piazzato il {{ date }}",
-      "cancelled": "Ordine annullato il {{ date }}",
+      "date_html": "Piazzato il {{ date }}",
+      "cancelled_html": "Ordine annullato il {{ date }}",
       "cancelled_reason": "Motivo: {{ reason }}",
       "billing_address": "Indirizzo di fatturazione",
       "payment_status": "Stato del pagamento",
@@ -257,14 +298,14 @@
       "fulfillment_status": "Stato di evasione ordine",
       "discount": "Sconto",
       "shipping": "Spedizione",
-      "tax": "Tassa",
+      "tax": "Imposta",
       "product": "Prodotto",
       "sku": "SKU",
       "price": "Prezzo",
       "quantity": "Quantità",
       "total": "Totale",
-      "fulfilled_at": "Evaso il {{ date }}",
-      "subtotal": "Totale parziale",
+      "fulfilled_at_html": "Evaso il {{ date }}",
+      "subtotal": "Subtotale",
       "track_shipment": "Controlla lo status della spedizione"
     },
     "recover_password": {
@@ -292,6 +333,9 @@
     }
   },
   "homepage": {
+    "general": {
+      "title": "Homepage"
+    },
     "onboarding": {
       "product_title": "Nome del tuo prodotto",
       "product_description": "Quest’area è per descrivere i dettagli del tuo prodotto. Qui puoi descrivere l'aspetto, il look e lo stile del prodotto ai tuoi clienti. Aggiungi dettagli sul colore, sui materiali utilizzati, sulle misure e su dove è stato creato.",
@@ -335,11 +379,18 @@
       "sale_price": "Prezzo scontato",
       "quantity": "Quantità",
       "add_to_cart": "Aggiungi al carrello",
+      "loader_label": "Inserimento del prodotto nel carrello",
       "back_to_collection": "Torna a {{ title }}",
       "vendor": "Venditore",
       "quantity_minimum_message": "La quantità deve essere 1 o più",
-      "include_taxes": "Tasse incluse.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento."
+      "include_taxes": "Imposte incluse.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Spedizione</a> calcolata al momento del pagamento.",
+      "unit_price_label": "Prezzo unitario",
+      "view_cart": "Visualizza carrello",
+      "availability": "Disponibilità",
+      "from_lowest_price_html": "da {{ lowest_price }}",
+      "view_in_space": "Visualizza nel tuo spazio",
+      "view_in_space_label": "Visualizzazione nel tuo spazio, carica l'elemento nella finestra di realtà aumentata"
     }
   },
   "gift_cards": {
@@ -347,7 +398,7 @@
       "title_html": "Ecco il tuo {{ value }} buono regalo per {{ shop }}!",
       "subtext": "Il tuo buono regalo",
       "gift_card_code": "codice della carta regalo",
-      "disabled": "Disabilitato",
+      "disabled": "Disabilitati",
       "expired": "Scaduto il {{ expiry }}",
       "active": "Scade il {{ expiry }}",
       "redeem_html": "Utilizza questo codice alla cassa per riscattare la tua carta regalo di {{ value }}",
@@ -357,8 +408,5 @@
       "add_to_apple_wallet": "Aggiungi a Apple Wallet",
       "qr_image_alt": "Codice QR: scansiona per riscattare la carta regalo"
     }
-  },
-  "date_formats": {
-    "month_day_year": "%B %d, %Y"
   }
 }

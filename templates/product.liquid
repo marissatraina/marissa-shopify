@@ -4,6 +4,17 @@
 
 {% section 'product-template' %}
 
+{% section 'product-recommendations' %}
+
+{% if collection %}
+  <div class="text-center return-link-wrapper page-width">
+    <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
+      {% include 'icon-arrow-left' %}
+      {{ 'products.product.back_to_collection' | t: title: collection.title }}
+    </a>
+  </div>
+{% endif %}
+
 <script>
   // Override default values of shop.strings for each template.
   // Alternate product templates can change values of
@@ -21,33 +32,33 @@
 {
   "@context": "http://schema.org/",
   "@type": "Product",
-  "name": "{{ product.title | escape }}",
-  "url": "{{ shop.url }}{{ product.url }}",
-  {%- if product.featured_image -%}
-    {%- assign image_size = product.featured_image.width | append: 'x' -%}
+  "name": {{ product.title | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  {%- if product.featured_media -%}
+    {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
     "image": [
-      "https:{{ product.featured_image.src | img_url: image_size }}"
+      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
     ],
   {%- endif -%}
-  "description": "{{ product.description | strip_html | escape }}",
+  "description": {{ product.description | strip_html | json }},
   {%- if current_variant.sku != blank -%}
-    "sku": "{{ current_variant.sku }}",
+    "sku": {{ current_variant.sku | json }},
   {%- endif -%}
   "brand": {
     "@type": "Thing",
-    "name": "{{ product.vendor | escape }}"
+    "name": {{ product.vendor | json }}
   },
   "offers": [
     {%- for variant in product.variants -%}
       {
         "@type" : "Offer",
         {%- if variant.sku != blank -%}
-          "sku": "{{ variant.sku }}",
+          "sku": {{ variant.sku | json }},
         {%- endif -%}
         "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
-        "price" : "{{ variant.price | divided_by: 100.00 }}",
-        "priceCurrency" : "{{ cart.currency.iso_code }}",
-        "url" : "{{ shop.url }}{{ variant.url }}"
+        "price" : {{ variant.price | divided_by: 100.00 | json }},
+        "priceCurrency" : {{ cart.currency.iso_code | json }},
+        "url" : {{ shop.url | append: variant.url | json }}
       }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   ]

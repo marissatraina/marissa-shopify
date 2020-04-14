@@ -2,13 +2,16 @@
   "general": {
     "accessibility": {
       "skip_to_content": "Skip to content",
-      "close_modal": "Close (esc)",
+      "close_modal": "Close",
       "link_messages": {
         "new_window": "Opens in a new window.",
         "external": "Opens external website.",
         "new_window_and_external": "Opens external website in a new window."
       },
-      "refresh_page": "choosing a selection results in a full page refresh"
+      "refresh_page": "Choosing a selection results in a full page refresh.",
+      "selection_help": "Press the space key then arrow keys to make a selection.",
+      "unit_price_separator": "per",
+      "error": "Error"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -47,11 +50,11 @@
       }
     },
     "search": {
-      "no_results_html": "Please try a different search term or go back to the <a href=\"/\">homepage</a>.",
+      "no_results": "Try checking your spelling or using different words.",
       "empty_search_message": "Search field cannot be empty",
       "results_with_count": {
-        "one": "{{ count }} result for \"{{ terms }}\"",
-        "other": "{{ count }} results for \"{{ terms }}\""
+        "one": "{{ count }} result for “{{ terms }}”",
+        "other": "{{ count }} results for “{{ terms }}”"
       },
       "title": "Search our site",
       "placeholder": "Search",
@@ -60,7 +63,14 @@
       "heading": {
         "one": "Search result",
         "other": "Search results"
-      }
+      },
+      "search_for": "Search for",
+      "products": "Products",
+      "loading": "Loading",
+      "clear_search_term": "Clear search term",
+      "number_of_results": "{{ result_number }} of {{ results_count }}",
+      "number_of_results_found": "{{ results_count }} results found",
+      "one_result_found": "1 result found"
     },
     "newsletter_form": {
       "newsletter_email": "Subscribe to our mailing list",
@@ -77,6 +87,9 @@
     },
     "currency": {
       "dropdown_label": "Currency"
+    },
+    "language": {
+      "dropdown_label": "Language"
     }
   },
   "sections": {
@@ -90,7 +103,9 @@
     },
     "featured_product": {
       "title": "Featured product",
-      "gallery_thumbnail_alt": "Load image into Gallery viewer, {{ imageAlt }}"
+      "gallery_thumbnail_alt": "Load image into Gallery viewer, {{ imageAlt }}",
+      "video_thumbnail_alt": "Load and play video in Gallery viewer, {{ imageAlt }}",
+      "model_thumbnail_alt": "Load 3D model into Gallery viewer, {{ imageAlt }}"
     },
     "map": {
       "address_error": "Error looking up that address",
@@ -100,10 +115,10 @@
       "section_heading": "Location"
     },
     "video": {
-      "play": "Play video",
-      "pause": "Pause video",
-      "resume": "Resume video",
-      "close": "Close video"
+      "play": "Play {{ video_title }} video",
+      "pause": "Pause {{ video_title }} video",
+      "resume": "Resume {{ video_title }} video",
+      "close": "Close {{ video_title }} video"
     }
   },
   "blogs": {
@@ -116,7 +131,12 @@
       "read_more": "Read more",
       "read_more_title": "Read more: {{ title }}",
       "back_to_blog": "Back to {{ title }}",
-      "tags": "Tags"
+      "tags": "Tags",
+      "article_with_count": {
+        "zero": "0 articles",
+        "one": "1 article",
+        "other": "{{ count }} articles"
+      }
     },
     "comments": {
       "title": "Leave a comment",
@@ -138,6 +158,7 @@
     "general": {
       "title": "Your cart",
       "note": "Add a note to your order",
+      "removed_item_html": "Removed <span class=\"cart__removed-product-details\">({{ quantity }}) {{ link }}</span> from your cart.",
       "remove": "Remove",
       "subtotal": "Subtotal",
       "savings": "You're saving",
@@ -153,15 +174,31 @@
       "checkout": "Check out",
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
-      "edit": "Edit",
-      "cancel": "Cancel",
-      "continue_shopping": "Continue shopping"
+      "continue_shopping": "Continue shopping",
+      "cart_error": "There was an error while updating your cart. Please try again."
     },
     "label": {
+      "discounted_total": "Discounted total",
       "product": "Product",
       "price": "Price",
+      "price_column": "See Price column for discount details.",
+      "product_details": "Product details",
       "quantity": "Quantity",
-      "total": "Total"
+      "qty": "Qty",
+      "regular_total": "Regular total",
+      "remove": "Remove {{ product }}",
+      "total": "Total",
+      "update": "Update"
+    },
+    "popup": {
+      "added_to_cart": "Just added to your cart",
+      "cart_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      },
+      "product_details": "Product details",
+      "quantity": "Qty",
+      "quantity_label": "Quantity: {{ quantity_count }}"
     }
   },
   "collections": {
@@ -174,6 +211,9 @@
         "other": "{{ count }} products"
       },
       "collection_label": "Collection"
+    },
+    "catalog": {
+      "title": "Catalog"
     },
     "sorting": {
       "title": "Sort by"
@@ -217,10 +257,10 @@
       "first_name": "First Name",
       "last_name": "Last Name",
       "company": "Company",
-      "address1": "Address1",
-      "address2": "Address2",
+      "address1": "Address",
+      "address2": "Apartment, suite, etc.",
       "city": "City",
-      "country": "Country",
+      "country": "Country/Region",
       "province": "Province",
       "zip": "Postal/Zip Code",
       "phone": "Phone",
@@ -244,6 +284,7 @@
     "orders": {
       "title": "Order History",
       "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
       "date": "Date",
       "payment_status": "Payment Status",
       "fulfillment_status": "Fulfillment Status",
@@ -252,8 +293,8 @@
     },
     "order": {
       "title": "Order {{ name }}",
-      "date": "Placed on {{ date }}",
-      "cancelled": "Order Cancelled on {{ date }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
       "cancelled_reason": "Reason: {{ reason }}",
       "billing_address": "Billing Address",
       "payment_status": "Payment Status",
@@ -267,7 +308,7 @@
       "price": "Price",
       "quantity": "Quantity",
       "total": "Total",
-      "fulfilled_at": "Fulfilled {{ date }}",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
       "subtotal": "Subtotal",
       "track_shipment": "Track shipment"
     },
@@ -296,6 +337,9 @@
     }
   },
   "homepage": {
+    "general": {
+      "title": "Homepage"
+    },
     "onboarding": {
       "product_title": "Your product's name",
       "product_description": "This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color, materials used, sizing, and where it was made.",
@@ -335,16 +379,23 @@
       "regular_price": "Regular price",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
+      "availability": "Availability",
       "on_sale": "Sale",
+      "from_lowest_price_html": "from {{ lowest_price }}",
       "sale_price": "Sale price",
       "quantity": "Quantity",
       "add_to_cart": "Add to cart",
+      "loader_label": "Adding product to your cart",
       "back_to_collection": "Back to {{ title }}",
       "vendor": "Vendor",
       "quantity_minimum_message": "Quantity must be 1 or more",
       "include_taxes": "Tax included.",
       "shipping_policy_html":
-      "<a href=\"{{ link }}\">Shipping</a> calculated at checkout."
+      "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "unit_price_label": "Unit price",
+      "view_cart": "View cart",
+      "view_in_space": "View in your space",
+      "view_in_space_label": "View in your space, loads item in augmented reality window"
     }
   },
   "gift_cards": {
@@ -362,8 +413,5 @@
       "add_to_apple_wallet": "Add to Apple Wallet",
       "qr_image_alt": "QR code — scan to redeem gift card"
     }
-  },
-  "date_formats": {
-    "month_day_year": "%B %d, %Y"
   }
 }

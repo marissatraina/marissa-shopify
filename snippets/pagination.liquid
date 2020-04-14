@@ -1,3 +1,12 @@
+{% comment %}
+    Renders a pagination bar
+
+    Accepts:
+    - paginate: {Object} Paginate Liquid object (required)
+
+    Usage:
+    {% include 'pagination', paginate: paginate %}
+{% endcomment %}
 <ul class="list--inline pagination">
   {% unless paginate.previous.is_link %}
     <li aria-hidden="true">

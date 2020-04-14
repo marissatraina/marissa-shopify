@@ -2,13 +2,16 @@
   "general": {
     "accessibility": {
       "skip_to_content": "Passer au contenu",
-      "close_modal": "Fermer (Échap)",
+      "close_modal": "Fermer",
       "link_messages": {
         "new_window": "S'ouvre dans une nouvelle fenêtre.",
         "external": "Ouvre un site externe.",
         "new_window_and_external": "Ouvre un site externe dans une nouvelle fenêtre."
       },
-      "refresh_page": "le choix d'une sélection entraîne une actualisation complète de la page"
+      "refresh_page": "Le choix d'une sélection entraîne l'actualisation d'une page entière.",
+      "selection_help": "Appuyez sur la touche espace puis sur les touches fléchées pour faire une sélection.",
+      "unit_price_separator": "par",
+      "error": "Erreur"
     },
     "meta": {
       "tags": "Balises \"{{ tags }}\"",
@@ -47,12 +50,7 @@
       }
     },
     "search": {
-      "no_results_html": "Veuillez essayer un terme de recherche différent ou revenir à la <a href=\"/\">page d'accueil</a>.",
       "empty_search_message": "Le champ de recherche ne peut pas être vide",
-      "results_with_count": {
-        "one": "{{ count }} résultat pour \"{{ terms }}\"",
-        "other": "{{ count }} résultats pour \"{{ terms }}\""
-      },
       "title": "Effectuer une recherche",
       "placeholder": "Rechercher",
       "submit": "Soumettre",
@@ -60,6 +58,18 @@
       "heading": {
         "one": "Résultat de la recherche",
         "other": "Résultats de la recherche"
+      },
+      "search_for": "Rechercher",
+      "loading": "Chargement",
+      "clear_search_term": "Effacer le terme de recherche",
+      "number_of_results": "{{ result_number }} sur {{ results_count }}",
+      "products": "Produits",
+      "number_of_results_found": "{{ results_count }} résultats trouvés",
+      "one_result_found": "1 résultat trouvé",
+      "no_results": "Essayez de vérifier votre orthographe ou d'utiliser des mots différents.",
+      "results_with_count": {
+        "one": "{{ count }} résultat pour « {{ terms }} »",
+        "other": "{{ count }} résultats pour « {{ terms }} »"
       }
     },
     "newsletter_form": {
@@ -77,6 +87,9 @@
     },
     "currency": {
       "dropdown_label": "Devise"
+    },
+    "language": {
+      "dropdown_label": "Langue"
     }
   },
   "sections": {
@@ -90,7 +103,9 @@
     },
     "featured_product": {
       "title": "Produit en vedette",
-      "gallery_thumbnail_alt": "Charger l'image dans la galerie, {{ imageAlt }}"
+      "gallery_thumbnail_alt": "Charger l'image dans la galerie, {{ imageAlt }}",
+      "video_thumbnail_alt": "Charger et lire la vidéo dans la visionneuse de la Galerie, {{ imageAlt }}",
+      "model_thumbnail_alt": "Charger le modèle 3D dans la Galerie, {{ imageAlt }}"
     },
     "map": {
       "address_error": "Une erreur s'est produite dans la recherche de cette adresse",
@@ -100,10 +115,10 @@
       "section_heading": "Emplacement"
     },
     "video": {
-      "play": "Lire la vidéo",
-      "pause": "Pause vidéo",
-      "resume": "Reprendre la vidéo",
-      "close": "Fermer la vidéo"
+      "play": "Lire la vidéo {{ video_title }}",
+      "pause": "Suspendre la vidéo {{ video_title }}",
+      "resume": "Reprendre la vidéo {{ video_title }}",
+      "close": "Fermer la vidéo {{ video_title }}"
     }
   },
   "blogs": {
@@ -116,7 +131,12 @@
       "read_more": "En savoir plus",
       "read_more_title": "En savoir plus sur : {{ title }}",
       "back_to_blog": "Retour à {{ title }}",
-      "tags": "Balises"
+      "tags": "Balises",
+      "article_with_count": {
+        "one": "1 article",
+        "other": "{{ count }} articles",
+        "zero": "0 articles"
+      }
     },
     "comments": {
       "title": "Laisser un commentaire",
@@ -138,7 +158,8 @@
     "general": {
       "title": "Votre panier",
       "note": "Ajouter une note à votre commande",
-      "remove": "Retirer",
+      "removed_item_html": "<span class=\"cart__removed-product-details\">({{ quantity }}) {{ link }}</span> supprimé(s) de votre panier.",
+      "remove": "Supprimer",
       "subtotal": "Sous-total",
       "savings": "Vous économisez",
       "taxes_and_shipping_at_checkout": "Taxes et frais de port calculés à la caisse",
@@ -149,15 +170,31 @@
       "checkout": "Passer à la caisse",
       "empty": "Votre panier est vide.",
       "cookies_required": "Activer les cookies pour pouvoir utiliser le panier",
-      "edit": "Modifier",
-      "cancel": "Annuler",
-      "continue_shopping": "Poursuivre vos achats"
+      "continue_shopping": "Poursuivre vos achats",
+      "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Essayez de nouveau s’il vous plaît."
     },
     "label": {
+      "discounted_total": "Total après réduction",
       "product": "Produit",
       "price": "Prix",
+      "price_column": "Voir les détails de la réduction dans la colonne Prix.",
+      "product_details": "Détails des produits",
       "quantity": "Quantité",
-      "total": "Total"
+      "qty": "Qté",
+      "regular_total": "Total avant réduction",
+      "remove": "Supprimer {{ product }}",
+      "total": "Total",
+      "update": "Mettre à jour"
+    },
+    "popup": {
+      "added_to_cart": "Ajouté au panier à l'instant",
+      "cart_count": {
+        "one": "{{ count }} article",
+        "other": "{{ count }} articles"
+      },
+      "product_details": "Détails des produits",
+      "quantity": "Qté",
+      "quantity_label": "Quantité : {{ quantity_count }}"
     }
   },
   "collections": {
@@ -170,6 +207,9 @@
         "other": "{{ count }} produits"
       },
       "collection_label": "Collection"
+    },
+    "catalog": {
+      "title": "Catalogue"
     },
     "sorting": {
       "title": "Trier par"
@@ -213,10 +253,10 @@
       "first_name": "Prénom",
       "last_name": "Nom de famille",
       "company": "Entreprise",
-      "address1": "Adresse 1",
-      "address2": "Adresse 2",
+      "address1": "Adresse",
+      "address2": "Appt, suite, etc.",
       "city": "Ville",
-      "country": "Pays",
+      "country": "Pays/région",
       "province": "Province",
       "zip": "Code postal",
       "phone": "Téléphone",
@@ -240,6 +280,7 @@
     "orders": {
       "title": "Historique des commandes",
       "order_number": "Commande",
+      "order_number_link": "Numéro de commande {{ number }}",
       "date": "Date",
       "payment_status": "Statut du paiement",
       "fulfillment_status": "Statut du traitement",
@@ -248,8 +289,8 @@
     },
     "order": {
       "title": "Commande {{ name }}",
-      "date": "Placée le {{ date }}",
-      "cancelled": "Commande annulée le {{ date }}",
+      "date_html": "Placée le {{ date }}",
+      "cancelled_html": "Commande annulée le {{ date }}",
       "cancelled_reason": "Motif : {{ reason }}",
       "billing_address": "Adresse de facturation",
       "payment_status": "Statut du paiement",
@@ -263,7 +304,7 @@
       "price": "Prix",
       "quantity": "Quantité",
       "total": "Total",
-      "fulfilled_at": "Traitée le {{ date }}",
+      "fulfilled_at_html": "Traitée le {{ date }}",
       "subtotal": "Sous-total",
       "track_shipment": "Suivre l'envoi"
     },
@@ -292,6 +333,9 @@
     }
   },
   "homepage": {
+    "general": {
+      "title": "Page d’accueil"
+    },
     "onboarding": {
       "product_title": "Le nom de votre produit",
       "product_description": "Ce champ est utilisé pour décrire les détails de votre produit. Décrivez l'apparence, la présentation et le style de votre produit à vos clients. Ajoutez des détails sur la couleur, les matériaux utilisés, la taille et la provenance.",
@@ -335,11 +379,18 @@
       "sale_price": "Prix réduit",
       "quantity": "Quantité",
       "add_to_cart": "Ajouter au panier",
+      "loader_label": "Ajout d'un produit à votre panier",
       "back_to_collection": "Retour à {{ title }}",
       "vendor": "Distributeur",
       "quantity_minimum_message": "La quantité doit être supérieure ou égale à 1",
       "include_taxes": "Taxes incluses.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés lors du passage à la caisse."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés lors du passage à la caisse.",
+      "unit_price_label": "Prix unitaire",
+      "view_cart": "Voir le panier",
+      "availability": "Disponibilité",
+      "from_lowest_price_html": "de {{ lowest_price }}",
+      "view_in_space": "Afficher dans votre espace",
+      "view_in_space_label": "Affichage dans votre espace, charge l'article dans une fenêtre de réalité augmentée"
     }
   },
   "gift_cards": {
@@ -357,8 +408,5 @@
       "add_to_apple_wallet": "Ajouter à Apple Wallet",
       "qr_image_alt": "code QR - scannez pour réclamer votre carte-cadeau"
     }
-  },
-  "date_formats": {
-    "month_day_year": "%d %b %Y"
   }
 }

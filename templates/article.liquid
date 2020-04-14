@@ -39,20 +39,20 @@
                 {% endcomment %}
                 {% if comment.status == 'pending' %}
                   <li id="{{ comment.id }}" class="comment">
-                    {% include 'comment' %}
+                    {% include 'comment', comment: comment %}
                   </li>
                 {% endif %}
 
                 {% for comment in article.comments %}
                   <li id="{{ comment.id }}" class="comment">
-                    {% include 'comment' %}
+                    {% include 'comment', comment: comment %}
                   </li>
                 {% endfor %}
               </ul>
 
-              {% if paginate.pages > 1 %}
-                {% include 'pagination' %}
-              {% endif %}
+              {%- if paginate.pages > 1 -%}
+                {% include 'pagination', paginate: paginate %}
+              {%- endif -%}
 
             </div>
           {% endpaginate %}
@@ -79,7 +79,7 @@
               {%- assign post_message = 'blogs.comments.unapproved' -%}
             {%- endif -%}
 
-            {% include 'form-status', form_id: formId, success_message: post_message %}
+            {% include 'form-status', form: form, form_id: formId, success_message: post_message %}
 
             <div class="grid">
 
@@ -87,7 +87,11 @@
                 <label for="{{ formId }}-author">{{ 'blogs.comments.name' | t }}</label>
                 <input type="text" name="comment[author]" id="{{ formId }}-author" class="input-full{% if form.errors contains 'author' %} input--error{% endif %}" value="{{ form.author }}"{% if form.errors contains 'author' %} aria-invalid="true" aria-describedby="{{ formId}}-author-error"{% endif %}>
                 {% if form.errors contains 'author' %}
-                  <span id="{{ formId}}-author-error" class="input-error-message">{% include 'icon-error' %} {{ 'blogs.comments.name' | t }} {{ form.errors.messages['author'] }}.</span>
+                  <span id="{{ formId}}-author-error" class="input-error-message">
+                    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    {% include 'icon-error' %}
+                    <span>{{ 'blogs.comments.name' | t }} {{ form.errors.messages['author'] }}.</span>
+                  </span>
                 {% endif %}
               </div>
 
@@ -95,7 +99,11 @@
                 <label for="{{ formId }}-email">{{ 'blogs.comments.email' | t }}</label>
                 <input type="email" name="comment[email]" id="{{ formId }}-email" class="input-full{% if form.errors contains 'email' %} input--error{% endif %}" value="{{ form.email }}" autocorrect="off" autocapitalize="off" {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="{{ formId}}-email-error"{% endif %}>
                 {% if form.errors contains 'email' %}
-                  <span id="{{ formId}}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                  <span id="{{ formId}}-email-error" class="input-error-message">
+                    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    {% include 'icon-error' %}
+                    <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                  </span>
                 {% endif %}
               </div>
 
@@ -103,7 +111,11 @@
                 <label for="{{ formId }}-body">{{ 'blogs.comments.message' | t }}</label>
                 <textarea name="comment[body]" id="{{ formId }}-body" class="input-full{% if form.errors contains 'body' %} input--error{% endif %}"{% if form.errors contains 'body' %} aria-invalid="true" aria-describedby="{{ formId}}-body-error"{% endif %}>{{ form.body }}</textarea>
                 {% if form.errors contains 'body' %}
-                  <span id="{{ formId}}-body-error" class="input-error-message">{% include 'icon-error' %} {{ 'blogs.comments.message' | t }} {{ form.errors.messages['body'] }}.</span>
+                  <span id="{{ formId}}-body-error" class="input-error-message">
+                    <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    {% include 'icon-error' %}
+                    <span>{{ 'blogs.comments.message' | t }} {{ form.errors.messages['body'] }}.</span>
+                  </span>
                 {% endif %}
               </div>
 
@@ -122,7 +134,7 @@
 {% endif %}
 
 <div class="text-center return-link-wrapper page-width">
-  <a href="{{ blog.url }}" class="btn btn--secondary btn--has-icon-before return-link">
+  <a href="{{ blog.url }}" class="btn btn--secondary btn--has-icon-before">
     {% include 'icon-arrow-left' %}
     {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
   </a>
@@ -132,26 +144,26 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "articleBody": "{{ article.content | strip_html }}",
+  "articleBody": {{ article.content | strip_html | json }},
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ shop.url }}{{ page.url }}"
+    "@id": {{ shop.url | append: page.url | json }}
   },
-  "headline": "{{ article.title }}",
+  "headline": {{ article.title | json }},
   {% if article.excerpt != blank %}
-    "description": "{{ article.excerpt | strip_html }}",
+    "description": {{ article.excerpt | strip_html | json }},
   {% endif %}
   {% if article.image %}
     {% assign image_size = article.image.width | append: 'x' %}
     "image": [
-      "https:{{ article | img_url: image_size }}"
+      {{ article | img_url: image_size | prepend: "https:" | json }}
     ],
   {% endif %}
-  "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
-  "dateCreated": "{{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
   "author": {
     "@type": "Person",
-    "name": "{{ article.author }}"
+    "name": {{ article.author | json }}
   },
   "publisher": {
     "@type": "Organization",
@@ -159,12 +171,12 @@
       {% assign image_size = settings.share_image.width | append: 'x' %}
       "logo": {
         "@type": "ImageObject",
-        "height": "{{ settings.share_image.height }}",
-        "url": "https:{{ settings.share_image | img_url: image_size }}",
-        "width": "{{ settings.share_image.width }}"
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
       },
     {% endif %}
-    "name": "{{ shop.name }}"
+    "name": {{ shop.name | json }}
   }
 }
 </script>

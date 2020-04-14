@@ -5,10 +5,13 @@
       "close_modal": "Schließen",
       "link_messages": {
         "new_window": "Öffnet ein neues Fenster.",
-        "external": "Öffnet externe Webseite.",
-        "new_window_and_external": "Öffnet externe Webseite in einem neuen Fenster."
+        "external": "Öffnet externe Website.",
+        "new_window_and_external": "Öffnet externe Website in einem neuen Fenster."
       },
-      "refresh_page": "Wenn Sie eine Auswahl auswählen, wird eine vollständige Seite aktualisiert"
+      "refresh_page": "Wenn Sie eine Auswahl auswählen, wird eine vollständige Seite aktualisiert.",
+      "selection_help": "Drücken Sie die Leertaste und dann die Pfeiltasten, um eine Auswahl zu treffen.",
+      "unit_price_separator": "pro",
+      "error": "Fehler"
     },
     "meta": {
       "tags": "Getaggt \"{{ tags }}\"",
@@ -47,12 +50,7 @@
       }
     },
     "search": {
-      "no_results_html": "Bitte versuchen Sie einen anderen Suchbegriff oder gehen Sie zurück zur <a href=\"/\">Startseite</a>.",
       "empty_search_message": "Suchfeld darf nicht leer sein",
-      "results_with_count": {
-        "one": "{{ count }} Ergebnis für \"{{ terms }}\"",
-        "other": "{{ count }} Ergebnisse für \"{{ terms }}\""
-      },
       "title": "Suchen Sie auf unserer Seite",
       "placeholder": "Suchen",
       "submit": "Suchen",
@@ -60,6 +58,18 @@
       "heading": {
         "one": "Suchergebnis",
         "other": "Suchergebnisse"
+      },
+      "search_for": "Suchen nach",
+      "loading": "Wird geladen",
+      "clear_search_term": "Suchbegriffe zurücksetzen",
+      "number_of_results": "{{ result_number }} von {{ results_count }}",
+      "products": "Produkte",
+      "number_of_results_found": "{{ results_count }} Ergebnisse gefunden",
+      "one_result_found": "1 Ergebnis gefunden",
+      "no_results": "Überprüfen Sie die Schreibweise oder versuchen Sie es mit einer anderen Wörtern.",
+      "results_with_count": {
+        "one": "{{ count }} Suchergebnis für \"{{ terms }}\"",
+        "other": "{{ count }} Suchergebnisse für \"{{ terms }}\""
       }
     },
     "newsletter_form": {
@@ -77,6 +87,9 @@
     },
     "currency": {
       "dropdown_label": "Währung"
+    },
+    "language": {
+      "dropdown_label": "Sprache"
     }
   },
   "sections": {
@@ -90,20 +103,22 @@
     },
     "featured_product": {
       "title": "Vorgestelltes Produkt",
-      "gallery_thumbnail_alt": "Laden Sie das Bild in den Galerie-Viewer, {{ imageAlt }}"
+      "gallery_thumbnail_alt": "Laden Sie das Bild in den Galerie-Viewer, {{ imageAlt }}",
+      "video_thumbnail_alt": "Laden und Abspielen von Videos im Galerie-Viewer, {{ imageAlt }}",
+      "model_thumbnail_alt": "Laden Sie das 3D-Modell in den Galerie-Viewer, {{ imageAlt }}"
     },
     "map": {
       "address_error": "Kann die Adresse nicht finden",
       "address_no_results": "Keine Ergebnisse für diese Adresse",
-      "address_query_limit_html": "Sie haben die Google- API-Nutzungsgrenze überschritten. Betrachten wir zu einem <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium-Paket</a> zu aktualisieren.",
-      "auth_error_html": "Es gab ein Problem bei Google Maps Konto zu authentifizieren.",
-      "section_heading": "Lage"
+      "address_query_limit_html": "Sie haben die Nutzungsgrenze der Google-API überschritten. Sie sollten über ein Upgrade auf einen <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium-Plan</a> nachdenken.",
+      "auth_error_html": "Es gab ein Problem bei der Authentifizierung Ihres Google Maps-Kontos.",
+      "section_heading": "Standort"
     },
     "video": {
-      "play": "Video abspielen",
-      "pause": "Video pausieren",
-      "resume": "Video fortsetzen",
-      "close": "Video schliessen"
+      "play": "Video {{ video_title }} abspielen",
+      "pause": "Video {{ video_title }} pausieren",
+      "resume": "Video {{ video_title }} fortsetzen",
+      "close": "Video {{ video_title }} schließen"
     }
   },
   "blogs": {
@@ -116,7 +131,12 @@
       "read_more": "Weiterlesen",
       "read_more_title": "Weiterlesen: {{ title }}",
       "back_to_blog": "Zurück zu {{ title }}",
-      "tags": "Stichworte"
+      "tags": "Stichworte",
+      "article_with_count": {
+        "one": "1 Artikel",
+        "other": "{{ count }} Artikel",
+        "zero": "0 Artikel"
+      }
     },
     "comments": {
       "title": "Hinterlassen Sie einen Kommentar",
@@ -136,8 +156,9 @@
   },
   "cart": {
     "general": {
-      "title": "Einkaufswagen",
+      "title": "Warenkorb",
       "note": "Einen Hinweis zu Ihrer Bestellung hinzufügen",
+      "removed_item_html": "<span class=\"cart__removed-product-details\">({{ quantity }}) {{ link }}</span> aus Ihrem Warenkorb entfernt.",
       "remove": "Entfernen",
       "subtotal": "Zwischensumme",
       "savings": "Sie sparen",
@@ -145,19 +166,35 @@
       "taxes_and_shipping_policy_at_checkout_html": "zzgl. MwSt. und <a href=\"{{ link }}\">Versandkosten</a>",
       "taxes_included_but_shipping_at_checkout": "inkl. MwSt.",
       "taxes_included_and_shipping_policy_html": "inkl. MwSt. zzgl. <a href=\"{{ link }}\">Versandkosten</a>",
-      "update": "Einkaufswagen aktualisieren",
+      "update": "Warenkorb aktualisieren",
       "checkout": "Zur kasse",
-      "empty": "Ihr Einkaufswagen ist im Moment leer.",
-      "cookies_required": "Aktivieren Sie Cookies, um den Einkaufswagen benutzen zu können",
-      "edit": "Bearbeiten",
-      "cancel": "Abbrechen",
-      "continue_shopping": "Weiter einkaufen"
+      "empty": "Ihr Warenkorb ist im Moment leer.",
+      "cookies_required": "Aktivieren Sie Cookies, um den Warenkorb benutzen zu können",
+      "continue_shopping": "Weiter einkaufen",
+      "cart_error": "Beim Aktualisieren des Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut."
     },
     "label": {
+      "discounted_total": "Gesamtrabatt",
       "product": "Artikel",
       "price": "Preis",
+      "price_column": "Rabattdetails finden Sie in der Preisspalte.",
+      "product_details": "Produktdetails",
       "quantity": "Menge",
-      "total": "Gesamt"
+      "qty": "Menge",
+      "regular_total": "Normaler Gesamtpreis",
+      "remove": "{{ product }} entfernen",
+      "total": "Gesamt",
+      "update": "Warenkorb aktualisieren"
+    },
+    "popup": {
+      "added_to_cart": "Zum Warenkorb hinzugefügt",
+      "cart_count": {
+        "one": "{{ count }} Artikel",
+        "other": "{{ count }} Produkte"
+      },
+      "product_details": "Produktdetails",
+      "quantity": "Menge",
+      "quantity_label": "Menge: {{ quantity_count }}"
     }
   },
   "collections": {
@@ -169,7 +206,10 @@
         "one": "{{ count }} Produkt",
         "other": "{{ count }} Produkte"
       },
-      "collection_label": "Sammlung"
+      "collection_label": "Kategorie"
+    },
+    "catalog": {
+      "title": "Katalog"
     },
     "sorting": {
       "title": "Sortieren nach"
@@ -192,17 +232,17 @@
   },
   "customer": {
     "account": {
-      "title": "Mein Account",
-      "details": "Account-Details",
+      "title": "Mein Konto",
+      "details": "Kontodetails",
       "view_addresses": "Adressen ansehen",
-      "return": "Zurück zu Account-Details"
+      "return": "Zurück zu Kontodetails"
     },
     "activate_account": {
-      "title": "Account aktivieren",
-      "subtext": "Erstellen Sie ein Passwort, um Ihren Account zu aktiveren.",
+      "title": "Konto aktivieren",
+      "subtext": "Erstellen Sie ein Passwort, um Ihr Konto zu aktiveren.",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
-      "submit": "Account aktivieren",
+      "submit": "Konto aktivieren",
       "cancel": "Einladung ablehnen"
     },
     "addresses": {
@@ -213,10 +253,10 @@
       "first_name": "Vorname",
       "last_name": "Nachname",
       "company": "Firma",
-      "address1": "Adresse1",
-      "address2": "Adresse2",
+      "address1": "Adresse",
+      "address2": "Wohnung, Zimmer usw.",
       "city": "Stadt",
-      "country": "Land",
+      "country": "Land / Region",
       "province": "Bundesland",
       "zip": "PLZ",
       "phone": "Telefon",
@@ -238,8 +278,9 @@
       "guest_continue": "Fortsetzen"
     },
     "orders": {
-      "title": "Bestellungen",
+      "title": "Bestellhistorie",
       "order_number": "Bestellung",
+      "order_number_link": "Bestellnummer {{ number }}",
       "date": "Datum",
       "payment_status": "Zahlungsstatus",
       "fulfillment_status": "Lieferstatus",
@@ -248,8 +289,8 @@
     },
     "order": {
       "title": "Bestellung {{ name }}",
-      "date": "Aufgegeben am {{ date }}",
-      "cancelled": "Bestellung storniert am {{ date }}",
+      "date_html": "Aufgegeben am {{ date }}",
+      "cancelled_html": "Bestellung storniert am {{ date }}",
       "cancelled_reason": "Grund: {{ reason }}",
       "billing_address": "Rechnungsadresse",
       "payment_status": "Zahlungsstatus",
@@ -263,7 +304,7 @@
       "price": "Preis",
       "quantity": "Menge",
       "total": "Gesamt",
-      "fulfilled_at": "Geliefert am {{ date }}",
+      "fulfilled_at_html": "Geliefert am {{ date }}",
       "subtotal": "Zwischensumme",
       "track_shipment": "Sendung verfolgen"
     },
@@ -276,14 +317,14 @@
       "success": "Wir haben Ihnen eine E-Mail mit einem Link zum Aktualisieren des Passworts geschickt."
     },
     "reset_password": {
-      "title": "Account-Passwort zurücksetzen",
+      "title": "Passwort für Konto zurücksetzen",
       "subtext": "Geben Sie ein neues Passwort für {{ email }} ein",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
       "submit": "Passwort zurücksetzen"
     },
     "register": {
-      "title": "Account erstellen",
+      "title": "Konto erstellen",
       "first_name": "Vorname",
       "last_name": "Nachname",
       "email": "E-Mail",
@@ -292,10 +333,13 @@
     }
   },
   "homepage": {
+    "general": {
+      "title": "Startseite"
+    },
     "onboarding": {
       "product_title": "Der Name Ihres Produkts",
       "product_description": "Diesen Abschnitt können Sie nutzen, um die Details Ihres Produkts zu beschreiben. Erzählen Sie den Kunden, wie Ihr Produkt aussieht, sich anfühlt und designt ist. Fügen Sie Einzelheiten zu Farbe, verwendeten Materialien, Größe und Produktionsort hinzu.",
-      "collection_title": "Der Name Ihrer Kollektion",
+      "collection_title": "Name Ihrer Kategorie",
       "blog_title": "Der Titel Ihres Posts",
       "blog_excerpt": "Ihr Laden hat noch keine Blogposts veröffentlicht. Ein Blog kann genutzt werden, um über die Einführung neuer Produkte, Tipps oder andere Neuigkeiten, die Sie mit Ihren Kunden teilen möchten, zu berichten. Für Inspiration und Ratschläge für Ihren eigenen Laden und Blog können Sie den E-Commerce-Blog von Shopify besuchen.",
       "blog_author": "Name des Autors",
@@ -310,17 +354,17 @@
       "menu": "Menü"
     },
     "cart": {
-      "title": "Einkaufswagen",
+      "title": "Warenkorb",
       "items_count": {
         "one": "Produkt",
         "other": "Produkte"
       }
     },
     "customer": {
-      "account": "Account",
+      "account": "Konto",
       "log_out": "Ausloggen",
       "log_in": "Einloggen",
-      "create_account": "Account erstellen"
+      "create_account": "Konto erstellen"
     },
     "footer": {
       "social_platform": "{{ name }} auf {{ platform }}"
@@ -334,12 +378,19 @@
       "on_sale": "Angebot",
       "sale_price": "Sonderpreis",
       "quantity": "Menge",
-      "add_to_cart": "In den Einkaufswagen legen",
+      "add_to_cart": "In den Warenkorb legen",
+      "loader_label": "Produkt wird zum Warenkorb hinzugefügt",
       "back_to_collection": "Zurück zu {{ title }}",
       "vendor": "Verkäufer",
       "quantity_minimum_message": "Die Menge muss 1 oder mehr sein",
       "include_taxes": "inkl. MwSt.",
-      "shipping_policy_html": "zzgl. <a href=\"{{ link }}\">Versandkosten</a>"
+      "shipping_policy_html": "zzgl. <a href=\"{{ link }}\">Versandkosten</a>",
+      "unit_price_label": "Einzelpreis",
+      "view_cart": "Warenkorb einsehen",
+      "availability": "Verfügbarkeit",
+      "from_lowest_price_html": "von {{ lowest_price }}",
+      "view_in_space": "In Ihrem Bereich ansehen",
+      "view_in_space_label": "„Ansicht in Ihrem Raum“ lädt den Artikel im Augmented-Reality-Fenster"
     }
   },
   "gift_cards": {
@@ -357,8 +408,5 @@
       "add_to_apple_wallet": "Hinzufügen zu Apple Wallet",
       "qr_image_alt": "QR-Code - Scannen, um Geschenkkarte einzulösen"
     }
-  },
-  "date_formats": {
-    "month_day_year": "%d. %B. %Y"
   }
 }

@@ -1,7 +1,16 @@
+{% comment %}
+    Renders a list of products from a collection
+
+    Accepts:
+    - collection: {Object} Collection Liquid object (required)
+
+    Usage:
+    {% include 'collection-grid-item', collection: collection %}
+{% endcomment %}
 {% if collection.image %}
   {%- assign collection_image = collection.image -%}
-{% elsif collection.products.first and collection.products.first.images != empty %}
-  {%- assign collection_image = collection.products.first.featured_image -%}
+{% elsif collection.products.first and collection.products.first.media != empty %}
+  {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
 {% else %}
   {% assign collection_image = blank %}
 {% endif %}

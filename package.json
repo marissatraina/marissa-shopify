@@ -1,0 +1,40 @@
+{
+  "name": "wondersauce-shopify-boilerplate",
+  "version": "1.0.0",
+  "main": "src/js/index.js",
+  "repository": "git@github.com:Wondersauce/wondersauce-shopify-boilerplate.git",
+  "author": "<daniel.viedma@wondersauce.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
+    "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "scripts": {
+    "start": "npm-run-all -p theme:watch parcel:watch:css parcel:watch:js browsersync",
+    "deploy:development": "npm-run-all parcel:build:css parcel:build:js theme:deploy:development",
+    "deploy:production": "npm-run-all parcel:build:css parcel:build:js theme:deploy:production",
+    "theme:watch": "theme watch --notify=/tmp/somefile",
+    "theme:deploy:development": "theme deploy --env=development",
+    "theme:deploy:production": "theme deploy --env=production",
+    "parcel:build:css": "parcel build src/styles/styles.scss --out-dir assets --no-source-maps",
+    "parcel:build:js": "parcel build src/js/index.js --out-dir assets --no-source-maps",
+    "parcel:watch:css": "parcel watch src/styles/styles.scss --out-dir assets --no-hmr --no-source-maps",
+    "parcel:watch:js": "parcel watch src/js/index.js --out-dir assets --no-hmr --no-source-maps",
+    "browsersync": "node browsersync-script.js",
+    "prettier": "prettier \"src/**\" --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
