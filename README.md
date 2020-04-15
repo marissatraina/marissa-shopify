@@ -1,4 +1,4 @@
-# Wondersauce's Shopify Boilerplate
+# Marissa's WS Shopify Boilerplate
 
 A fresh start for your new Shopify project.
 
