@@ -27,8 +27,8 @@
     "theme:deploy:production": "theme deploy --env=production",
     "parcel:build:css": "parcel build src/styles/styles.scss --out-dir assets --no-source-maps",
     "parcel:build:js": "parcel build src/js/index.js --out-dir assets --no-source-maps",
-    "parcel:watch:css": "parcel watch src/styles/styles.scss --out-dir assets --no-hmr --no-source-maps",
-    "parcel:watch:js": "parcel watch src/js/index.js --out-dir assets --no-hmr --no-source-maps",
+    "parcel:watch:css": "parcel watch src/styles/styles.scss --out-dir assets --no-hmr",
+    "parcel:watch:js": "parcel watch src/js/index.js --out-dir assets --no-hmr",
     "browsersync": "node browsersync-script.js",
     "prettier": "prettier \"src/**\" --write"
   },

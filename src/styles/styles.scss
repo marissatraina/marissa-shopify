@@ -1,5 +1,2 @@
-// Visually remove shopify preview bar in proxy
-iframe[src="//localhost:3000/preview_bar"]
-{
-  display: none;
-}
+// Base Styling
+@import "base/vars", "base/global", "base/theme";

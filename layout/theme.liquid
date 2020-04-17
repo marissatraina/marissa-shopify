@@ -36,8 +36,6 @@
 
   {% include 'social-meta-tags' %}
 
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
   <script>
     var theme = {
       breakpoints: {
@@ -113,11 +111,7 @@
 </head>
 
 <body class="template-{{ request.page_type | handle }}">
-  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
-  {%- if settings.enable_ajax -%}
-  {% include 'cart-popup' %}
-  {%- endif -%}
+<a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {% section 'header' %}
 
@@ -128,11 +122,6 @@
     </main>
 
     {% section 'footer' %}
-
-    <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
-      {{- 'sections.slideshow.navigation_instructions' | t -}}
-    </div>
-
   </div>
 
    <!-- START: BrowserSync Reloading -->
