@@ -9,7 +9,7 @@
 node_modules
 
 # Shopify local config
-config.yml
+./config.yml
 
 # Compiled assets
 assets/styles.css
