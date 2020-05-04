@@ -13,4 +13,6 @@ node_modules
 
 # Compiled assets
 assets/styles.css
+assets/styles.css.map
 assets/index.js
+assets/index.js.map

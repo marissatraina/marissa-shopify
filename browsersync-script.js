@@ -1,25 +1,19 @@
-let fs = require("fs");
-let path = require("path");
-let yaml = require("js-yaml");
-let configFilePath = path.join(process.cwd(), "config.yml");
+let fs = require('fs');
+let path = require('path');
+let yaml = require('js-yaml');
+let configFilePath = path.join(process.cwd(), 'config.yml');
 let shopifyConfig = shopifyData(configFilePath);
 
-var bs = require("browser-sync").create();
+var bs = require('browser-sync').create();
 // Start a Browsersync proxy
 bs.init({
   proxy:
-    "https://" +
+    'https://' +
     shopifyConfig.store +
-    "/?preview_theme_id=" +
+    '/?preview_theme_id=' +
     shopifyConfig.theme_id,
-  files: [
-    "snippets/*.*",
-    "sections/*.*",
-    "templates/*.*",
-    "layout/*.*",
-    "assets/index.js",
-    "assets/styles.css",
-  ],
+  files: ['/tmp/somefile'],
+  reloadDelay: 1500,
   snippetOptions: {
     rule: {
       match: /<\/body>/i,
@@ -36,7 +30,7 @@ function shopifyData(configPath) {
   let config;
 
   try {
-    config = yaml.safeLoad(fs.readFileSync(configPath, "utf8"));
+    config = yaml.safeLoad(fs.readFileSync(configPath, 'utf8'));
   } catch (e) {
     return null;
   }

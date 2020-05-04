@@ -3,3 +3,19 @@ iframe[src="//localhost:3000/preview_bar"]
 {
   display: none;
 }
+
+.main-content {
+  display: grid;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  transition: width 2s;
+  font-size: 18px;
+}
+
+.visually-hidden {
+  @include visually-hidden();
+}
