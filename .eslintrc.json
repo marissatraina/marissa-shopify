@@ -1,0 +1,18 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "func-names": "off",
+    "indent": ["warn", 2],
+    "no-console": "off",
+    "no-unused-vars": "warn",
+    "object-shorthand": "off",
+    "quotes": ["error", "single"],
+    "semi": "error"
+  },
+  "parser": "babel-eslint"
+}
