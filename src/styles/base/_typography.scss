@@ -1,12 +1,3 @@
 /*========================================================================
-Global Styling
+Typography
 ========================================================================== */
-
-iframe[src="//localhost:3000/preview_bar"]
-{
-  display: none;
-}
-
-.visually-hidden {
-  @include visually-hidden();
-}
