@@ -1,0 +1,327 @@
+/*========================================================================
+Footer Styling 
+* note: references editorial styling
+========================================================================== */
+
+.footer {
+  background: $green;
+
+  &__row {
+    .title {
+      color: $white;
+      font-size: 20px;
+      font-family: $schnyder;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 25px;
+    }
+
+    label.title {
+      display: block;
+      cursor: pointer;
+    }
+    ul {
+      margin-left: 0; //Fix legacy footer
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    @include gutter-padding;
+    @include break($lg, max) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    width: 100%;
+
+    @include lg {
+      padding: 50px;
+      max-width: $xxl;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include lg {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__logo,
+  &__newsletter,
+  &__copyright {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+    a {
+      display: block;
+      width: 157px;
+      height: 43px;
+      background: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/golf_logo.svg?v=1588876573')
+        no-repeat;
+      background-size: contain;
+      @include md {
+        width: 200px;
+        height: 55px;
+      }
+      @include lg {
+        width: 230px;
+        height: 63px;
+      }
+    }
+    @include md {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+
+  &__newsletter {
+    .sumo-form-wrapper input,
+    .sumo-form-wrapper select,
+    .sumo-form-wrapper button {
+      font-family: $styrene !important;
+      font-size: 10px !important;
+      letter-spacing: 0.5px !important;
+      line-height: 1.2 !important;
+      color: $light-grey !important;
+    }
+
+    .sumo-form-wrapper input::placeholder {
+      color: $light-grey !important;
+    }
+
+    .sumo-form-wrapper select:invalid {
+      color: $light-grey !important;
+    }
+
+    .sumo-form-wrapper button {
+      color: $black !important;
+    }
+
+    .sumo-form-wrapper select {
+      background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxwYXRoIGQ9Ik0wIDBIMTJWMTJIMHoiLz4gICAgICAgIDxwYXRoIGZpbGw9IiMyMzFGMjAiIGQ9Ik0xMC42NDYgMy42NDZMMTEuMzU0IDQuMzU0IDYgOS43MDcgMC42NDYgNC4zNTQgMS4zNTQgMy42NDYgNiA4LjI5M3oiLz4gICAgPC9nPjwvc3ZnPg==)
+        no-repeat 95% 50%;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      border-radius: 0px;
+      appearance: none;
+      outline-width: 0;
+      padding-right: 25px !important;
+    }
+
+    .sumo-form-wrapper div {
+      max-width: 100%;
+    }
+    .sumo-form-wrapper select,
+    .sumome-react-wysiwyg-component-wrapper {
+      height: 40px !important;
+      line-height: 40px !important;
+      border-radius: 0 !important;
+    }
+    .sumo-form-wrapper.listbuilder-popup-embedded {
+      margin: 25px 0 40px;
+      min-height: 160px;
+      overflow: hidden;
+    }
+    .listbuilder-popup-scale {
+      transform: translate(0, -50%) scale(1) !important;
+      left: 0 !important;
+    }
+
+    .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-dropdown.sumome-react-wysiwyg-dropdown {
+      top: 60px !important;
+    }
+    .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-button.sumome-react-wysiwyg-button {
+      top: 120px !important;
+    }
+
+    @media screen and (max-width: $wide5) {
+      .sumo-form-wrapper div {
+        width: 100% !important;
+      }
+    }
+
+    .listbuilder-popup-scale,
+    .sumo-form-wrapper.listbuilder-popup-embedded
+      .listbuilder-popup-content
+      .sumome-react-wysiwyg-popup-container,
+    .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-background.sumome-react-wysiwyg-background {
+      width: auto !important;
+    }
+
+    @include md {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    @include lg {
+      grid-column-end: 5;
+
+      .sumo-form-wrapper.listbuilder-popup-embedded {
+        height: 40px !important;
+        min-height: 40px !important;
+        margin-bottom: 80px !important;
+      }
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-textField.sumome-react-wysiwyg-textField {
+        top: 0 !important;
+        left: 0 !important;
+        width: 200px !important;
+      }
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-dropdown.sumome-react-wysiwyg-dropdown {
+        width: 200px !important;
+        left: 225px !important;
+        top: 0 !important;
+      }
+
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-dropdown.sumome-react-wysiwyg-dropdown
+        .sumome-react-wysiwyg-component-wrapper,
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-dropdown.sumome-react-wysiwyg-dropdown
+        .sumome-react-wysiwyg-component-wrapper
+        select {
+        border-radius: 0;
+        height: 40px !important;
+        line-height: 40px !important;
+      }
+
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-button.sumome-react-wysiwyg-button {
+        width: 200px !important;
+        left: 450px !important;
+        top: 0 !important;
+      }
+    }
+
+    @include xl {
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-textField.sumome-react-wysiwyg-textField {
+        width: 238px !important;
+      }
+
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-dropdown.sumome-react-wysiwyg-dropdown {
+        left: 263px !important;
+        width: 238px !important;
+      }
+
+      .sumome-react-wysiwyg-component.sumome-react-wysiwyg-inline-popup-button.sumome-react-wysiwyg-button {
+        left: 525px !important;
+        width: 238px !important;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 27px;
+
+    p {
+      font-family: $lyon;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__categories {
+    .menu_cat {
+      &__ul {
+        margin-bottom: 32px;
+      }
+      li {
+        display: block;
+        list-style: none;
+
+        a {
+          @include text-label;
+          display: block;
+          color: $white;
+          padding: 10px 0px;
+          margin: 18px 0;
+        }
+      }
+    }
+  }
+
+  &__services {
+    .menu_ser {
+      &__ul {
+        margin-bottom: 32px;
+
+        li {
+          display: block;
+
+          a {
+            font-family: $styrene;
+            font-size: 10px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            color: $white;
+            text-transform: uppercase;
+            padding: 10px 0px;
+            margin: 18px 0;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    ul {
+      margin: 0px;
+      padding: 0px;
+      margin-top: 14px;
+
+      li {
+        margin-bottom: 8px;
+
+        a {
+          font-family: $styrene;
+          font-size: 10px;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.2;
+          letter-spacing: 0.5px;
+          color: $white;
+          text-transform: uppercase;
+
+          span {
+            color: $white;
+
+            &.text {
+              margin-left: 15px;
+            }
+          }
+
+          i {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            font-size: 14px;
+            font-style: normal;
+            border: 1px solid #fff;
+            color: #fff;
+            border-radius: 30px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  &__magazine {
+    .magazine-cover {
+      max-width: 151px;
+      margin-top: 25px;
+      @include aspect(151, 185);
+    }
+  }
+}

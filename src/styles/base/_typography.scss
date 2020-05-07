@@ -87,3 +87,75 @@ label {
   line-height: 1.2;
   text-transform: uppercase;
 }
+
+@mixin hero-title {
+  font-family: $schnyder-bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: $off-black;
+  font-size: 32px;
+  line-height: 1.44;
+  margin: 40px auto 25px auto;
+  padding: 0 20px;
+
+  @include md {
+    padding: 0px;
+  }
+
+  @include lg {
+    font-size: 60px;
+    line-height: 1.27;
+  }
+}
+
+@mixin text-price {
+  font-family: $styrene;
+  font-size: rem(14px);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71; // 24px;
+  letter-spacing: normal;
+  color: $off-black;
+
+  @include md {
+    font-size: rem(16px);
+    line-height: 1.5;
+  }
+}
+
+@mixin text-label {
+  font-family: $styrene;
+  font-size: rem(10px);
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2; // 12px;
+  letter-spacing: 0.5px;
+  color: $light-grey;
+  text-transform: uppercase;
+}
+
+@mixin text-detail {
+  font-family: $styrene;
+  font-size: rem(13px);
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54; //20px;
+  letter-spacing: -0.25px;
+  color: $off-black;
+}
+
+.text-price {
+  @include text-price;
+}
+
+.text-label {
+  @include text-label;
+}
+
+.text-detail {
+  @include text-detail;
+}

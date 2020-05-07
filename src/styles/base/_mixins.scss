@@ -1,6 +1,137 @@
 /*========================================================================
 Mixins
 ========================================================================== */
+//Breakpoints
+//Default Mobile-portrait
+$xsm: 31em; //496px
+$sm: 36em; //576px
+$md: 48em; //768px
+$lg: 64em; //1024px //NEWGOLF-272
+$xl: 80em; //1280px
+$xxl: 90em; //1440px
+
+$underMd: #{$md}-1px;
+
+@mixin xsm {
+  @media screen and (min-width: #{$xsm}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media screen and (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+// alternative breakpoint mixin
+@mixin break($media, $type: 'min') {
+  // mobile first by default
+  @media screen and (#{$type}-width: #{$media}) {
+    @content;
+  }
+}
+
+// Covert px to em
+@function em($px, $base: $default-font-size) {
+  @return ($px / $base) * 1em;
+}
+
+// Covert px to rem
+@function rem($px, $base: $default-font-size) {
+  @return ($px / $base) * 1rem;
+}
+
+// Get raw value
+@function get-value($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+// Covert lineheight px to unitless
+@function lh($line-height, $font-size) {
+  @return get-value($line-height / $font-size);
+}
+
+// aspect ratio for images
+@mixin aspect($width, $height, $fit: contain) {
+  position: relative;
+  display: block; //@TODO: check all designs.
+
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .inner {
+    position: absolute;
+    object-fit: $fit;
+    object-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    &-mobile-right {
+      object-position: right;
+    }
+
+    &-mobile-left {
+      object-position: left;
+    }
+
+    @include sm {
+      &-right {
+        object-position: right;
+      }
+
+      &-left {
+        object-position: left;
+      }
+    }
+  }
+}
+
+// Mixin Flexbox
+@mixin flex(
+  $direction: row,
+  $justify: center,
+  $alignI: center,
+  $wrap: wrap,
+  $alignC: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignI;
+  flex-wrap: $wrap;
+  align-content: $alignC;
+}
 
 @mixin visually-hidden() {
   // sass-lint:disable no-important
@@ -31,4 +162,15 @@ Mixins
   font-feature-settings: 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin gutter-padding {
+  @media screen and (max-width: #{$sm - 1}) {
+    padding-left: $gutterMobile;
+    padding-right: $gutterMobile;
+  }
+  @media screen and (min-width: #{$sm}) {
+    padding-left: $gutterDesktop;
+    padding-right: $gutterDesktop;
+  }
 }

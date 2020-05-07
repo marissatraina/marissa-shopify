@@ -6,3 +6,90 @@ Global Variables
 $off-black: #333;
 $grey: #555;
 $light-grey: #969696;
+$white: #fff;
+$black: #333333;
+$blue: #1a3a5d;
+$green: #0a2b26;
+$white: #ffffff;
+$yellow: #ffa300;
+$lightgray: #e8e8e8;
+$whitesmoke: #f7f7f7;
+$gray: #c7c7c7;
+$darkgray: #969696;
+$paragraph: #555555;
+$links: #0095da;
+$ocean: $blue;
+$gear: #0095da;
+$news: #e10600;
+$instruction: #00a651;
+$travel: $yellow;
+$feature: $news;
+$lifestyle: #fff200;
+$resort: #ffa300;
+$course: #ffa300;
+
+// z-index
+$z1: 100;
+$z2: 200;
+$z3: 300;
+$z4: 400;
+$z5: 500;
+$z6: 600;
+$z7: 700;
+$z8: 800;
+$z9: 900;
+$z10: 1000;
+
+// Layouts max width
+$wide2: 275px;
+$wide5: 577px;
+$wide7: 778px;
+$wide9: 979px;
+$wide11: 1181px;
+$wide12: 1280px;
+$wide13: 1340px;
+$wide14: 1440px;
+
+// FONTS
+$default-font-size: 16px;
+$default-line-height: 24px;
+
+// Icon fonts
+$icomoon-font-family: 'golf' !default;
+$icomoon-font-path: '/wp-content/themes/golf/fonts' !default;
+
+$icon-close: '\e912';
+$icon-slideshow: '\e911';
+$icon-bookmark: '\e901';
+$icon-arrow: '\e900';
+$icon-down: '\e902';
+$icon-ellipses: '\e903';
+$icon-email: '\e904';
+$icon-facebook: '\e905';
+$icon-fullscreen: '\e906';
+$icon-instagram: '\e907';
+$icon-pause: '\e908';
+$icon-play: '\e909';
+$icon-podcast: '\e90a';
+$icon-search: '\e90b';
+$icon-shop: '\e90c';
+$icon-twitter: '\e90d';
+$icon-user: '\e90e';
+$icon-video: '\e90f';
+$icon-youtube: '\e910';
+
+// Spacing
+$betweenBlocks: 80px;
+$betweenBlocksMobile: 60px;
+$betweenParagraphs: 40px;
+$betweenParagraphsMobile: 30px;
+$paddingContent: 0 20px;
+$gutterMobile: 20px;
+$gutterDesktop: 50px;
+
+// Height
+$headerHeight: 70px;
+$headerMobileHeight: 62px;
+
+$headerSearchHeight: 100px;
+$headerSearchMobileHeight: 80px;

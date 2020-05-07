@@ -1,6 +1,18 @@
 /*========================================================================
 Global Styling
 ========================================================================== */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
 html {
   font-size: $base-font-size;
   scroll-behavior: smooth;
@@ -10,8 +22,71 @@ body {
   font-family: $lyon;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 1.87;
-  color: #555555;
+  font-size: $default-font-size;
+  font-style: normal;
+  font-stretch: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  color: $paragraph;
+  font-family: $lyon;
+  line-height: 1.67;
+  letter-spacing: normal;
+  z-index: $z1;
+  overflow-x: hidden;
+
+  &.fixed {
+    overflow: hidden;
+  }
+  &.no-scroll {
+    overflow: hidden;
+  }
+  &.modal-open {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+p {
+  font-size: 18px;
+  color: $paragraph;
+
+  &:empty {
+    display: none;
+  }
+
+  @media screen and (min-width: #{$sm}) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  strong {
+    font-family: $lyon;
+    font-weight: bold;
+  }
+
+  a {
+    color: $links;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 iframe[src="//localhost:3000/preview_bar"]
