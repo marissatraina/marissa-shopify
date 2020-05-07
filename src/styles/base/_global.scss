@@ -1,6 +1,18 @@
 /*========================================================================
 Global Styling
 ========================================================================== */
+html {
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $lyon;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1.87;
+  color: #555555;
+}
 
 iframe[src="//localhost:3000/preview_bar"]
 {

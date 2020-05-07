@@ -1,3 +1,89 @@
 /*========================================================================
 Typography
+* note: postcss px to rem converter plugin applied to all font-related style attributes
 ========================================================================== */
+
+@font-face {
+  font-family: 'Schnyder M';
+  font-style: normal;
+  font-display: auto;
+  font-weight: bold;
+  font-stretch: normal;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.eot?v=1588795952');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.eot?v=1588795952?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.woff2?v=1588795951')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.woff?v=1588795951')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.ttf?v=1588795952')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/SchnyderM-Bold.svg?v=1588795953')
+      format('svg');
+}
+
+@font-face {
+  font-family: 'Lyon Text';
+  font-style: normal;
+  font-display: auto;
+  font-weight: normal;
+  font-stretch: normal;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.eot?v=1588795952');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.eot?v=1588795952?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.woff2?v=1588795951')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.woff?v=1588795951')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.ttf?v=1588795952')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/LyonText-Regular.svg?v=1588795953')
+      format('svg');
+}
+
+@font-face {
+  font-family: 'Styrene A';
+  font-style: normal;
+  font-display: auto;
+  font-stretch: normal;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff2?v=1588795951')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff?v=1588795951')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.ttf?v=1588795952')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.svg?v=1588795953')
+      format('svg');
+}
+
+/*= Font Families =*/
+$schnyder: 'Schnyder M', helvetica, sans-serif;
+$lyon: 'Lyon Text', helvetica, sans-serif;
+$styrene: 'Styrene M', helvetica, sans-serif;
+
+/*= Base Font Size =*/
+$base-font-size: 16px;
+
+/*= Headers =*/
+h1 {
+  font-family: $schnyder;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1;
+  color: $off-black;
+  font-size: 70px;
+}
+
+label {
+  color: $light-grey;
+  font-family: $styrene;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
