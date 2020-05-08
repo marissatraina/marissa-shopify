@@ -42,7 +42,43 @@ Typography
 }
 
 @font-face {
-  font-family: 'Styrene A';
+  font-family: 'Styrene A Regular';
+  font-style: normal;
+  font-display: auto;
+  font-stretch: normal;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff2?v=1588795951')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff?v=1588795951')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.ttf?v=1588795952')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.svg?v=1588795953')
+      format('svg');
+}
+
+@font-face {
+  font-family: 'Styrene A Bold';
+  font-style: normal;
+  font-display: auto;
+  font-stretch: normal;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff2?v=1588795951')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff?v=1588795951')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.ttf?v=1588795952')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.svg?v=1588795953')
+      format('svg');
+}
+
+@font-face {
+  font-family: 'Styrene A Medium';
   font-style: normal;
   font-display: auto;
   font-stretch: normal;
@@ -85,7 +121,7 @@ label {
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1.2;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 @mixin hero-title {
