@@ -76,3 +76,88 @@
     </div>
   </div>
 </footer>
+
+{% comment %} <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+        <div class="footer__row footer__logo">
+            <a href="{{ section.settings.logo_link }}" rel="home"></a>
+        </div>
+        <div class="footer__row footer__newsletter">
+            <label class="title" for="footer__newsletter__email">Newsletter</label>
+            <span data-sumome-listbuilder-embed-id="775626bf97c3e0ff535a161f8e8fb2678b21a924181c63bc76693fce9ac8d56b"></span>
+        </div>
+        <div class="footer__row footer__categories">
+            <div class="title">Categories</div>
+            <nav class="menu_cat">
+                <?php
+                wp_nav_menu(array(
+                    'menu' => 'Menu 2',
+                    'theme_location' => 'menu-2',
+                    'menu_id' => 'category-menu',
+                    'menu_class' => 'menu_cat__ul',
+                    'container_class' => 'menu_cat__wrapper',
+                ));
+                ?>
+            </nav>
+        </div>
+        <div class="footer__row footer__services">
+            <div class="title">Services</div>
+            <nav class="menu_cat">
+                <?php
+                wp_nav_menu(array(
+                    'menu' => 'Menu 3',
+                    'theme_location' => 'menu-3',
+                    'menu_id' => 'services-menu',
+                    'menu_class' => 'menu_ser__ul',
+                    'container_class' => 'menu_ser__wrapper',
+                ));
+                ?>
+            </nav>
+        </div>
+        <div class="footer__row footer__social">
+            <div class="title">Social</div>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/golf" target="_blank" rel="noopener noreferrer" class="social_link facebook">
+                        <span class="icon"><i class="icon-facebook"></i></span>
+                        <span class="text">facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/golf_com" target="_blank" rel="noopener noreferrer" class="social_link twitter">
+                        <span class="icon"><i class="icon-twitter"></i></span>
+                        <span class="text">twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/golf_com" target="_blank" rel="noopener noreferrer" class="social_link instagram">
+                        <span class="icon"><i class="icon-instagram"></i></span>
+                        <span class="text">instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCzdMqRWzdF0JUJRIVa-dgDw" target="_blank" rel="noopener noreferrer" class="social_link youtube">
+                        <span class="icon"><i class="icon-youtube"></i></span>
+                        <span class="text">youtube</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__row footer__magazine">
+            <div class="title">Magazine</div>
+            <a href="<?= get_field('magazine_cover_link', 'option'); ?>" target="_blank" rel="noopener noreferrer">
+                <div class="magazine-cover">
+                    <?php $magazine_cover = get_field('magazine_cover', 'option'); ?>
+                    <img
+                            class="lazy inner"
+                            data-src="<?php echo $magazine_cover['url']; ?>"
+                            data-srcset="<?php echo $magazine_cover['url']; ?>"
+                            alt="<?php echo $magazine_cover['alt']; ?>"/>
+                </div>
+            </a>
+        </div>
+        <div class="footer__row footer__copyright">
+            <p><?php the_field('copyright', 'option'); ?></p>
+        </div>
+    </div>
+</footer> {% endcomment %}

@@ -82,7 +82,7 @@ Footer Styling
     .sumo-form-wrapper input,
     .sumo-form-wrapper select,
     .sumo-form-wrapper button {
-      font-family: $styrene !important;
+      font-family: $styrene-bold !important;
       font-size: 10px !important;
       letter-spacing: 0.5px !important;
       line-height: 1.2 !important;
@@ -257,7 +257,7 @@ Footer Styling
           display: block;
 
           a {
-            font-family: $styrene;
+            font-family: $styrene-bold;
             font-size: 10px;
             font-stretch: normal;
             font-style: normal;
@@ -284,7 +284,7 @@ Footer Styling
         margin-bottom: 8px;
 
         a {
-          font-family: $styrene;
+          font-family: $styrene-bold;
           font-size: 10px;
           font-stretch: normal;
           font-style: normal;

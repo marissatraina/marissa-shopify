@@ -42,28 +42,11 @@ Typography
 }
 
 @font-face {
-  font-family: 'Styrene A Regular';
-  font-style: normal;
-  font-display: auto;
-  font-stretch: normal;
-  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
-  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
-      format('embedded-opentype'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff2?v=1588795951')
-      format('woff2'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff?v=1588795951')
-      format('woff'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.ttf?v=1588795952')
-      format('truetype'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.svg?v=1588795953')
-      format('svg');
-}
-
-@font-face {
   font-family: 'Styrene A Bold';
   font-style: normal;
   font-display: auto;
   font-stretch: normal;
+  font-weight: 700;
   src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
   src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
       format('embedded-opentype'),
@@ -82,23 +65,45 @@ Typography
   font-style: normal;
   font-display: auto;
   font-stretch: normal;
-  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952');
-  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.eot?v=1588795952?#iefix')
+  font-weight: 600;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.eot?v=1589061348');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.eot?v=1589061348?#iefix')
       format('embedded-opentype'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff2?v=1588795951')
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.woff2?v=1589061347')
       format('woff2'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.woff?v=1588795951')
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.woff?v=1589061347')
       format('woff'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.ttf?v=1588795952')
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.ttf?v=1589061348')
       format('truetype'),
-    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Bold.svg?v=1588795953')
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Medium.svg?v=1589061349')
+      format('svg');
+}
+
+@font-face {
+  font-family: 'Styrene A Regular';
+  font-style: normal;
+  font-display: auto;
+  font-stretch: normal;
+  font-weight: 400;
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.eot?v=1589061348');
+  src: url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.eot?v=1589061348?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.woff2?v=1589061348')
+      format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.woff?v=1589061347')
+      format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.ttf?v=1589061349')
+      format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0282/9005/6297/files/StyreneA-Regular.svg?v=1589061348')
       format('svg');
 }
 
 /*= Font Families =*/
 $schnyder: 'Schnyder M', helvetica, sans-serif;
 $lyon: 'Lyon Text', helvetica, sans-serif;
-$styrene: 'Styrene M', helvetica, sans-serif;
+$styrene-bold: 'Styrene A Bold', helvetica, sans-serif;
+$styrene-medium: 'Styrene A Medium', helvetica, sans-serif;
+$styrene-regular: 'Styrene A Regular', helvetica, sans-serif;
 
 /*= Base Font Size =*/
 $base-font-size: 16px;
@@ -116,9 +121,8 @@ h1 {
 
 label {
   color: $light-grey;
-  font-family: $styrene;
+  font-family: $styrene-bold;
   font-size: 10px;
-  font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1.2;
   // text-transform: uppercase;
@@ -146,7 +150,7 @@ label {
 }
 
 @mixin text-price {
-  font-family: $styrene;
+  font-family: $styrene-regular;
   font-size: rem(14px);
   font-weight: normal;
   font-stretch: normal;
@@ -162,7 +166,7 @@ label {
 }
 
 @mixin text-label {
-  font-family: $styrene;
+  font-family: $styrene-bold;
   font-size: rem(10px);
   font-weight: bold;
   font-stretch: normal;
@@ -174,7 +178,7 @@ label {
 }
 
 @mixin text-detail {
-  font-family: $styrene;
+  font-family: $styrene-medium;
   font-size: rem(13px);
   font-weight: 500;
   font-stretch: normal;
