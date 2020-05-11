@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="5px" viewBox="0 0 21 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Ellipses</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Navigation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav_1100px" transform="translate(-647.000000, -32.000000)" fill="#FFFFFF">
+            <g id="Ellipses" transform="translate(643.078613, 25.000000)">
+                <g transform="translate(3.921387, 7.095215)">
+                    <circle id="Oval" cx="2.96728516" cy="2.70458984" r="2"></circle>
+                    <circle id="Oval-Copy" cx="10.9672852" cy="2.70458984" r="2"></circle>
+                    <circle id="Oval-Copy-2" cx="18.9672852" cy="2.70458984" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

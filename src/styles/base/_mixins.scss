@@ -133,6 +133,22 @@ $underMd: #{$md}-1px;
   align-content: $alignC;
 }
 
+// ADA
+@mixin focus($color: $white, $offset: 2px, $contrast: 'none') {
+  // focus states for desktop
+  &:focus {
+    outline: 1px dotted $color;
+    outline-offset: $offset;
+
+    // extra contrast
+    @if ($contrast == 'dark') {
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+    } @else if ($contrast == 'light') {
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
 @mixin visually-hidden() {
   // sass-lint:disable no-important
   position: absolute !important;
