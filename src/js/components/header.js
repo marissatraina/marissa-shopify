@@ -15,12 +15,6 @@ class SiteHeader {
         this.body.classList.toggle('no-scroll');
         this.body.classList.toggle('main-navigation-opened');
         this.siteNavigation.classList.toggle('main-navigation--open');
-
-        // hide search bar when mobile nav is opened or closed
-        this.searchBar.classList.remove('search-bar--open');
-        this.searchToggles.forEach((t) => {
-          t.classList.remove('search--is-open');
-        });
       });
     });
   }
