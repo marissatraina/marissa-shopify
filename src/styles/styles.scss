@@ -4,6 +4,6 @@ Styling Imports
 @import 'base/vars', 'base/mixins', 'base/helpers', 'base/typography',
   'base/icon-fonts', 'base/global';
 
-@import 'layouts/flex', 'layouts/grid';
+@import 'layouts/flex', 'layouts/grid', 'layouts/global';
 
-@import 'components/footer', 'components/header';
+@import 'components/footer', 'components/header', 'components/proshop-header';

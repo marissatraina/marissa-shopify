@@ -13,7 +13,7 @@ bs.init({
     '/?preview_theme_id=' +
     shopifyConfig.theme_id,
   files: ['/tmp/somefile'],
-  reloadDelay: 1500,
+  reloadDelay: 1000,
   snippetOptions: {
     rule: {
       match: /<\/body>/i,

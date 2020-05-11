@@ -245,6 +245,16 @@ h4 {
   color: $off-black;
 }
 
+@mixin small-copy {
+  font-family: $lyon;
+  font-size: rem(12px);
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33; //16px;
+  color: $grey;
+}
+
 .text-price {
   @include text-price;
 }

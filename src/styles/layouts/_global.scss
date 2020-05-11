@@ -1,0 +1,10 @@
+.page-container {
+  margin: $gutterMobile auto 0;
+  margin-top: $headerMobileHeight;
+  display: flex;
+  flex-direction: column;
+
+  @include lg {
+    margin-top: $headerHeight;
+  }
+}

@@ -1,0 +1,19 @@
+/*========================================================================
+Pro Shop Header
+========================================================================== */
+
+.shop-header {
+  &__heading {
+    margin-bottom: em(50px);
+  }
+
+  &__legal {
+    margin-top: em(10px);
+    margin-bottom: em(60px);
+
+    &__divider {
+      margin-left: em(15px);
+      margin-right: em(15px);
+    }
+  }
+}

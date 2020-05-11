@@ -1,0 +1,16 @@
+{% comment %} 
+  Pro Shop Navigation
+  * note: nav variable is passed with link_list
+{% endcomment %}
+
+<nav class="shop-header__nav row">
+  <ul class="shop-header__menu row">
+    {% for link in linklists[nav].links %}
+      <li class="shop-header__menu__link {{ link.title | downcase | replace: ' ', '-' }}-link">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

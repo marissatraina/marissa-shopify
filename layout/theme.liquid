@@ -116,6 +116,9 @@
   {% section 'header' %}
 
   <div class="page-container drawer-page-content" id="PageContainer">
+    {% if template == 'index' %}
+      {% section 'proshop-header' %}
+    {% endif %}
 
     <main class="main-content" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}

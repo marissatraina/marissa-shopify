@@ -1,0 +1,49 @@
+<header class="shop-header">
+
+  {% if section.settings.enable_legal %}
+    <section class="shop-header__legal row">
+        
+      <div class="shop-header__legal__poweredby">
+        <span>
+          Powered by Global Golf
+        </span>
+      </div>
+      <div class="shop-header__legal__divider">|</div>
+
+      <div class="shop-header__legal__copy">
+        <span>
+          If you purchase something through our links, Golf may earn an affiliate commission.
+        </span>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="shop-header__heading row">
+    {% if template == 'index' %}
+      <h1>Pro Shop</h1>
+    {% endif %}
+  </section>
+
+  {% assign nav = section.settings.shop_nav %}
+  {% include 'proshop-nav', with: nav%}
+</header>
+
+{% schema %}
+{
+  "name": "Pro Shop Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_legal",
+      "label": "Enable Legal Statement",
+      "info": "Check box to enable legal statment in header",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "shop_nav",
+      "label": "Shop Menu"
+    }
+  ]
+}
+{% endschema %}
