@@ -20,14 +20,6 @@ Flex Layout
   align-content: $alignC;
 }
 
-// flex wrapper mixin
-@mixin flex-row() {
-}
-
-// flex column mixin
-@mixin flex-col() {
-}
-
 @mixin clearfix {
   &:before,
   &:after {
