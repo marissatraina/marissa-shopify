@@ -1,20 +1,9 @@
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: $z10;
   background: $green;
-
-  // @include md {
-  //   body.admin-bar.logged-in & {
-  //     top: $wpadminBarMobileHeight;
-  //   }
-  // }
-
-  // @include lg {
-  //   body.admin-bar.logged-in & {
-  //     top: $wpadminBarHeight;
-  //   }
-  // }
 }
 
 // Header Navigation

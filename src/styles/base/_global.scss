@@ -97,3 +97,7 @@ iframe[src="//localhost:3000/preview_bar"]
 .visually-hidden {
   @include visually-hidden();
 }
+
+.main-content {
+  min-height: 100vh;
+}
