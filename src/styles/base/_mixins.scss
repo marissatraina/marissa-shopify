@@ -48,11 +48,84 @@ $underMd: #{$md}-1px;
   }
 }
 
-// alternative breakpoint mixin
-@mixin break($media, $type: 'min') {
-  // mobile first by default
-  @media screen and (#{$type}-width: #{$media}) {
-    @content;
+// alternative breakpoints
+@mixin break($point, $type: 'min') {
+  // for large desktop layouts
+  @if $point==max {
+    @media (#{$type}-width: $xxl + 1) {
+      @content;
+    }
+  }
+
+  // for desktop layouts
+  @if $point==desktop {
+    @media (#{$type}-width: $xl) {
+      @content;
+    }
+  }
+
+  // for small desktop / large tablet layouts
+  @if $point==tabletLarge {
+    @media (#{$type}-width: $lg) {
+      @content;
+    }
+  }
+
+  // tablet
+  @if $point==tablet {
+    @media (#{$type}-width: $md) {
+      @content;
+    }
+  }
+
+  // layouts < 768px
+  @if $point==mobile {
+    @media (#{$type}-width: $sm) {
+      @content;
+    }
+  }
+}
+
+@mixin break-max($point) {
+  // for large desktop layouts
+  @if $point==max {
+    @media (max-width: $xxl - 1) {
+      @content;
+    }
+  }
+
+  // for desktop layouts
+  @if $point==desktop {
+    @media (max-width: $xl) {
+      @content;
+    }
+  }
+
+  // for small desktop / large tablet layouts
+  @if $point==tabletLarge {
+    @media (max-width: $lg) {
+      @content;
+    }
+  }
+
+  // tablet
+  @if $point==tablet {
+    @media (max-width: $md) {
+      @content;
+    }
+  }
+
+  // layouts < 768px
+  @if $point==mobile {
+    @media (max-width: $md - 1) {
+      @content;
+    }
+  }
+
+  @if $point==mobilesm {
+    @media (max-width: $sm) {
+      @content;
+    }
   }
 }
 
@@ -115,22 +188,6 @@ $underMd: #{$md}-1px;
       }
     }
   }
-}
-
-// Mixin Flexbox
-@mixin flex(
-  $direction: row,
-  $justify: center,
-  $alignI: center,
-  $wrap: wrap,
-  $alignC: center
-) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $alignI;
-  flex-wrap: $wrap;
-  align-content: $alignC;
 }
 
 // ADA

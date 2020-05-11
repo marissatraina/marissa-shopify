@@ -2,10 +2,10 @@
 Helpers
 ========================================================================== */
 
+@function asset_url($filename) {
+  @return url('../../assets/#{$filename} ');
+}
+
 @function liquid-var($name) {
   @return #{'{{ ' + $name + ' }}'};
 }
-
-// @function liquid-asset($filename){
-//   @return #{ "{{ " + "'" + $filename + "'" + " | asset_url }}"}
-// }

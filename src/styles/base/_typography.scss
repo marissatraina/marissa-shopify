@@ -9,12 +9,12 @@ Typography
   font-display: auto;
   font-weight: bold;
   font-stretch: normal;
-  src: url('../../assets/SchnyderM-Bold.eot');
-  src: url('../../assets/SchnyderM-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/SchnyderM-Bold.woff2') format('woff2'),
-    url('../../assets/SchnyderM-Bold.woff') format('woff'),
-    url('../../assets/SchnyderM-Bold.ttf') format('truetype'),
-    url('../../assets/SchnyderM-Bold.svg') format('svg');
+  src: asset_url('SchnyderM-Bold.eot');
+  src: asset_url('SchnyderM-Bold.eot?#iefix') format('embedded-opentype'),
+    asset_url('SchnyderM-Bold.woff2') format('woff2'),
+    asset_url('SchnyderM-Bold.woff') format('woff'),
+    asset_url('SchnyderM-Bold.ttf') format('truetype'),
+    asset_url('SchnyderM-Bold.svg') format('svg');
 }
 
 @font-face {
@@ -23,13 +23,12 @@ Typography
   font-display: auto;
   font-weight: normal;
   font-stretch: normal;
-  src: url('../../assets/LyonText-Regular.eot');
-  src: url('../../assets/LyonText-Regular.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/LyonText-Regular.woff2') format('woff2'),
-    url('../../assets/LyonText-Regular.woff') format('woff'),
-    url('../../assets/LyonText-Regular.ttf') format('truetype'),
-    url('../../assets/LyonText-Regular.svg') format('svg');
+  src: asset_url('LyonText-Regular.eot');
+  src: asset_url('LyonText-Regular.eot?#iefix') format('embedded-opentype'),
+    asset_url('LyonText-Regular.woff2') format('woff2'),
+    asset_url('LyonText-Regular.woff') format('woff'),
+    asset_url('LyonText-Regular.ttf') format('truetype'),
+    asset_url('LyonText-Regular.svg') format('svg');
 }
 
 @font-face {
@@ -38,12 +37,12 @@ Typography
   font-display: auto;
   font-stretch: normal;
   font-weight: 700;
-  src: url('../../assets/StyreneA-Bold.eot');
-  src: url('../../assets/StyreneA-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../../assets/StyreneA-Bold.woff2') format('woff2'),
-    url('../../assets/StyreneA-Bold.woff') format('woff'),
-    url('../../assets/StyreneA-Bold.ttf') format('truetype'),
-    url('../../assets/StyreneA-Bold.svg') format('svg');
+  src: asset_url('StyreneA-Bold.eot');
+  src: asset_url('StyreneA-Bold.eot?#iefix') format('embedded-opentype'),
+    asset_url('StyreneA-Bold.woff2') format('woff2'),
+    asset_url('StyreneA-Bold.woff') format('woff'),
+    asset_url('StyreneA-Bold.ttf') format('truetype'),
+    asset_url('StyreneA-Bold.svg') format('svg');
 }
 
 @font-face {
@@ -52,13 +51,12 @@ Typography
   font-display: auto;
   font-stretch: normal;
   font-weight: 600;
-  src: url('../../assets/StyreneA-Medium.eot');
-  src: url('../../assets/StyreneA-Medium.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/StyreneA-Medium.woff2') format('woff2'),
-    url('../../assets/StyreneA-Medium.woff') format('woff'),
-    url('../../assets/StyreneA-Medium.ttf') format('truetype'),
-    url('../../assets/StyreneA-Medium.svg') format('svg');
+  src: asset_url('StyreneA-Medium.eot');
+  src: asset_url('StyreneA-Medium.eot?#iefix') format('embedded-opentype'),
+    asset_url('StyreneA-Medium.woff2') format('woff2'),
+    asset_url('StyreneA-Medium.woff') format('woff'),
+    asset_url('StyreneA-Medium.ttf') format('truetype'),
+    asset_url('StyreneA-Medium.svg') format('svg');
 }
 
 @font-face {
@@ -67,13 +65,12 @@ Typography
   font-display: auto;
   font-stretch: normal;
   font-weight: 400;
-  src: url('../../assets/StyreneA-Regular.eot');
-  src: url('../../assets/StyreneA-Regular.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/StyreneA-Regular.woff2') format('woff2'),
-    url('../../assets/StyreneA-Regular.woff') format('woff'),
-    url('../../assets/StyreneA-Regular.ttf') format('truetype'),
-    url('../../assets/StyreneA-Regular.svg') format('svg');
+  src: asset_url('StyreneA-Regular.eot');
+  src: asset_url('StyreneA-Regular.eot?#iefix') format('embedded-opentype'),
+    asset_url('StyreneA-Regular.woff2') format('woff2'),
+    asset_url('StyreneA-Regular.woff') format('woff'),
+    asset_url('StyreneA-Regular.ttf') format('truetype'),
+    asset_url('StyreneA-Regular.svg') format('svg');
 }
 
 /*= Font Families =*/
@@ -87,27 +84,109 @@ $styrene-regular: 'Styrene A Regular', helvetica, sans-serif;
 $base-font-size: 16px;
 
 /*= Headers =*/
+
 h1 {
   font-family: $schnyder;
-  font-weight: bold;
-  font-style: normal;
+  font-size: 42px;
   font-stretch: normal;
+  font-style: normal;
   line-height: 1.1;
+  letter-spacing: normal;
   color: $off-black;
-  font-size: 70px;
+  max-width: $wide5;
+
+  @include md {
+    padding: 0px;
+  }
+
+  @include lg {
+    font-size: 100px;
+  }
 }
 
-label {
-  color: $light-grey;
-  font-family: $styrene-bold;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
-  // text-transform: uppercase;
+h2 {
+  font-family: $schnyder;
+  font-size: 28px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $off-black;
+  padding: 0 20px;
+  max-width: $wide5;
+  margin: 0 auto;
+  @include md {
+    padding: 0px;
+  }
+  @include lg {
+    font-size: 42px;
+    line-height: 1.29;
+  }
+}
+
+h3 {
+  font-family: $schnyder;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.42;
+  letter-spacing: normal;
+  color: $off-black;
+  margin: 45px auto 20px auto;
+  padding: 0 20px;
+  max-width: $wide5;
+  @include md {
+    padding: 0px;
+  }
+  @include lg {
+    font-size: 32px;
+    margin-bottom: 30px;
+    line-height: 1.44;
+  }
+}
+
+h4 {
+  font-family: $schnyder;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $off-black;
+  margin: 45px auto 30px auto;
+  padding: 0 20px;
+  max-width: $wide5;
+
+  @include md {
+    padding: 0px;
+  }
+  @include lg {
+    font-size: 24px;
+    line-height: 1.42;
+  }
+}
+
+@mixin h4 {
+  font-family: $schnyder;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $off-black;
+
+  @include lg {
+    font-size: 24px;
+    line-height: 1.42;
+  }
 }
 
 @mixin hero-title {
-  font-family: $schnyder-bold;
+  font-family: $schnyder;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;

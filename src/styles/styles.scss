@@ -1,7 +1,9 @@
 /*========================================================================
 Styling Imports
 ========================================================================== */
-@import 'base/vars', 'base/mixins', 'base/typography', 'base/icon-fonts',
-  'base/global';
+@import 'base/vars', 'base/mixins', 'base/helpers', 'base/typography',
+  'base/icon-fonts', 'base/global';
+
+@import 'layouts/flex', 'layouts/grid';
 
 @import 'components/footer', 'components/header';

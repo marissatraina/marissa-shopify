@@ -1,0 +1,15 @@
+/*========================================================================
+CSS Grid
+========================================================================== */
+$default-grid-gutter: 10px;
+
+// mixin for site grid layout wrapper
+@mixin grid(
+  $col: 4,
+  $col-gutter: $default-grid-gutter,
+  $row-gutter: $default-grid-gutter
+) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  gap: $row-gutter $col-gutter;
+}
