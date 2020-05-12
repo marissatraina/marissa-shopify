@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Icon/Navigation/Shop</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Golf_Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Golf_UI_Library" transform="translate(-380.000000, -923.000000)" fill="#969696">
+            <g id="Icon/Navigation/Shop" transform="translate(380.000000, 923.000000)">
+                <g id="Combined-Shape">
+                    <path d="M9,0.5 C11.0662998,0.5 12.4083089,1.6112379 12.4954803,3.77266083 L12.5,4 L12.4994836,5.499 L17.5475164,5.5 L16.4566073,17.5 L1.54339268,17.5 L0.45248359,5.5 L5.49948359,5.499 L5.5,4 C5.5,1.68919632 6.86244852,0.5 9,0.5 Z M16.452,6.5 L1.547,6.5 L2.456,16.5 L15.543,16.5 L16.452,6.5 Z M9,1.5 C7.44882458,1.5 6.56928828,2.21561836 6.50392628,3.80506225 L6.5,4 L6.49948359,5.499 L11.4994836,5.499 L11.5,4 C11.5,2.27401282 10.6132224,1.5 9,1.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

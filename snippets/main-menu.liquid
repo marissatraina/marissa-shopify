@@ -1,19 +1,18 @@
+{% comment %} 
+  Site Header Main Nav Menu
+  * note: includes main_menu link_list variable from header.liquid
+{% endcomment %}
 <div class="menu-main-menu-container">
   <ul id="primary-menu" class="menu">
-    <li id="menu-item-15392942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15392942">
-      <a href="https://golf.com/news/">News</a>
-    </li>
-    <li id="menu-item-15392924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15392924"><a href="https://golf.com/instruction/">Instruction</a></li>
-    <li id="menu-item-15392923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15392923"><a href="https://golf.com/gear/">Gear</a></li>
-    <li id="menu-item-15392925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15392925"><a href="https://golf.com/lifestyle/">Lifestyle</a></li>
-    <li id="menu-item-15392926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15392926"><a href="https://golf.com/travel/">Travel</a></li>
-    <li id="menu-item-15392908" class="tablet-toggle menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-15392908"><a href="#">…</a>
-      <ul class="sub-menu">
-        <li id="menu-item-15395005" class="menu-item menu-item-type-post_type menu-item-object-leaderboard menu-item-15395005"><a href="https://golf.com/leaderboard/2020/hero-world-challenge-3/">Leaderboards</a></li>
-        <li id="menu-item-15393061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15393061"><a href="https://golf.com/videos/">Videos</a></li>
-        <li id="menu-item-15393062" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15393062"><a href="https://golf.com/podcasts/">Podcasts</a></li>
-      </ul>
-    </li>
+    {% for link in linklists[nav].links %}
+      <li class="menu-item menu-item-type-post_type menu-item-object-page">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+
+    {% comment %} Subscribe link always present {% endcomment %}
     <li id="menu-item-15392936" class="subscribe menu-item menu-item-type-custom menu-item-object-custom menu-item-15392936"><a href="https://w1.buysub.com/pubs/EB/GFM/ab-hamburger.jsp?cds_mag_code=GFM">Subscribe</a></li>
   </ul>
 </div>

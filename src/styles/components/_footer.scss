@@ -274,6 +274,24 @@ Footer Styling
     }
   }
 
+  .menu {
+    &__ul {
+      margin-bottom: 32px;
+    }
+    li {
+      display: block;
+      list-style: none;
+
+      a {
+        @include text-label;
+        display: block;
+        color: $white;
+        padding: 10px 0px;
+        margin: 18px 0;
+      }
+    }
+  }
+
   &__social {
     ul {
       margin: 0px;

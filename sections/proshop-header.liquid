@@ -19,7 +19,9 @@
   {% endif %}
 
   <section class="shop-header__heading row">
-    {% if template == 'index' %}
+    {% if template == 'collection' %}
+      <h1>{{ collection.title }}</h1>
+    {% else %}
       <h1>Pro Shop</h1>
     {% endif %}
   </section>

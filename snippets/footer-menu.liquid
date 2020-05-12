@@ -1,0 +1,18 @@
+{% comment %} 
+  Footer Menu
+  * note: includes footer_menu link_list variable
+{% endcomment %}
+
+<nav class="menu_cat">
+  <div class="menu__wrapper">
+    <ul class="menu__ul">
+      {% for link in linklists[footer_menu].links %}
+        <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

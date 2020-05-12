@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Icon/Navigation/User</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Golf_Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Golf_UI_Library" transform="translate(-408.000000, -923.000000)" fill="#969696">
+            <g id="Icon/Navigation/User" transform="translate(408.000000, 923.000000)">
+                <g id="Combined-Shape">
+                    <path d="M9,0.5 C11.209139,0.5 13,2.290861 13,4.5 C13,5.82620711 12.3545858,7.00166967 11.3607213,7.72942384 C15.2614044,8.54817975 17.2884939,11.5682201 17.3722907,16.6674094 L17.375,17 L16.375,17 C16.375,11.2623948 13.9579045,8.5 9,8.5 C4.13390853,8.5 1.71539339,11.1610312 1.62748751,16.6843037 L1.625,17 L0.625,17 C0.625,11.6994185 2.65454217,8.56584902 6.63860834,7.72833994 C5.64541418,7.00166967 5,5.82620711 5,4.5 C5,2.290861 6.790861,0.5 9,0.5 Z M9,1.5 C7.34314575,1.5 6,2.84314575 6,4.5 C6,6.15685425 7.34314575,7.5 9,7.5 C10.6568542,7.5 12,6.15685425 12,4.5 C12,2.84314575 10.6568542,1.5 9,1.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
