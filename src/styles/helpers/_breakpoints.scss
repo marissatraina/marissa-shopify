@@ -1,0 +1,131 @@
+/*========================================================================
+Breakpoints
+========================================================================== */
+
+//Breakpoints
+//Default Mobile-portrait
+$xsm: 31em; //496px
+$sm: 36em; //576px
+$md: 48em; //768px
+$lg: 64em; //1024px //NEWGOLF-272
+$xl: 80em; //1280px
+$xxl: 90em; //1440px
+
+$underMd: #{$md}-1px;
+
+@mixin xsm {
+  @media screen and (min-width: #{$xsm}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media screen and (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+// alternative breakpoints
+@mixin break($point, $type: 'min') {
+  // for large desktop layouts
+  @if $point==max {
+    @media (#{$type}-width: $xxl + 1) {
+      @content;
+    }
+  }
+
+  // for desktop layouts
+  @if $point==desktop {
+    @media (#{$type}-width: $xl) {
+      @content;
+    }
+  }
+
+  // for small desktop / large tablet layouts
+  @if $point==tabletLarge {
+    @media (#{$type}-width: $lg) {
+      @content;
+    }
+  }
+
+  // tablet
+  @if $point==tablet {
+    @media (#{$type}-width: $md) {
+      @content;
+    }
+  }
+
+  // layouts < 768px
+  @if $point==mobile {
+    @media (#{$type}-width: $sm) {
+      @content;
+    }
+  }
+}
+
+@mixin break-max($point) {
+  // for large desktop layouts
+  @if $point==max {
+    @media (max-width: $xxl - 1) {
+      @content;
+    }
+  }
+
+  // for desktop layouts
+  @if $point==desktop {
+    @media (max-width: $xl) {
+      @content;
+    }
+  }
+
+  // for small desktop / large tablet layouts
+  @if $point==tabletLarge {
+    @media (max-width: $lg) {
+      @content;
+    }
+  }
+
+  // tablet
+  @if $point==tablet {
+    @media (max-width: $md) {
+      @content;
+    }
+  }
+
+  // layouts < 768px
+  @if $point==mobile {
+    @media (max-width: $md - 1) {
+      @content;
+    }
+  }
+
+  @if $point==mobilesm {
+    @media (max-width: $sm) {
+      @content;
+    }
+  }
+}

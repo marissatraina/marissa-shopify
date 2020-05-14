@@ -1,9 +1,20 @@
 /*========================================================================
 Styling Imports
 ========================================================================== */
-@import 'base/vars', 'base/mixins', 'base/helpers', 'base/typography',
-  'base/icon-fonts', 'base/global';
+// variables
+@import 'base/vars';
 
+// helpers
+@import 'helpers/helpers', 'helpers/mixins', 'helpers/breakpoints',
+  'helpers/lazyload';
+
+// base
+@import 'base/typography', 'base/icon-fonts', 'base/global';
+
+// layouts
 @import 'layouts/flex', 'layouts/grid', 'layouts/global';
 
+// components
 @import 'components/footer', 'components/header', 'components/proshop-header';
+
+// pages

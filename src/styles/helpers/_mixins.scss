@@ -1,0 +1,147 @@
+/*========================================================================
+Mixins
+========================================================================== */
+// visual mixins
+@mixin visually-hidden() {
+  // sass-lint:disable no-important
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+@mixin visually-shown() {
+  // sass-lint:disable no-important
+  position: inherit !important;
+  overflow: auto;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+// padding
+@mixin gutter-padding {
+  @media screen and (max-width: #{$sm - 1}) {
+    padding-left: $gutterMobile;
+    padding-right: $gutterMobile;
+  }
+  @media screen and (min-width: #{$sm}) {
+    padding-left: $gutterDesktop;
+    padding-right: $gutterDesktop;
+  }
+}
+
+// aspect ratio for images
+@mixin aspect($width, $height, $fit: contain) {
+  position: relative;
+  display: block; //@TODO: check all designs.
+
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .inner {
+    position: absolute;
+    object-fit: $fit;
+    object-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    &-mobile-right {
+      object-position: right;
+    }
+
+    &-mobile-left {
+      object-position: left;
+    }
+
+    @include sm {
+      &-right {
+        object-position: right;
+      }
+
+      &-left {
+        object-position: left;
+      }
+    }
+  }
+}
+
+// ADA
+@mixin focus($color: $white, $offset: 2px, $contrast: 'none') {
+  // focus states for desktop
+  &:focus {
+    outline: 1px dotted $color;
+    outline-offset: $offset;
+
+    // extra contrast
+    @if ($contrast == 'dark') {
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+    } @else if ($contrast == 'light') {
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@mixin smoothing {
+  font-variant-ligatures: common-ligatures;
+  -moz-font-feature-settings: 'liga', 'clig';
+  -webkit-font-feature-settings: 'liga', 'clig';
+  font-feature-settings: 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin loader(
+  $width,
+  $height,
+  $stroke-width,
+  $stroke-color: $mine-shaft,
+  $stroke-color2: rgba(255, 255, 255, 0.2),
+  $over-color: transparent
+) {
+  &::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    width: $width;
+    height: $height;
+    z-index: $z2;
+    transform: translateZ(0);
+    animation: loader 1.1s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    border-top: $stroke-width solid $stroke-color;
+    border-right: $stroke-width solid $stroke-color2;
+    border-bottom: $stroke-width solid $stroke-color2;
+    border-left: $stroke-width solid $stroke-color2;
+
+    @if ($over-color) {
+      background-color: $over-color;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    z-index: $z1;
+    background-color: $over-color;
+  }
+}

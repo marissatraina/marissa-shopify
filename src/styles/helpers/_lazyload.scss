@@ -1,0 +1,134 @@
+/* CUSTOM LAZYLOAD v0.0.1 - see lazyload.js for functionality
+========================================================================== */
+
+.lazy {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  &--loaded {
+    .lazy {
+      &__img {
+        &--translate-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &--fade-in {
+          opacity: 1;
+        }
+      }
+
+      &__loader {
+        opacity: 0;
+      }
+    }
+  }
+
+  &--done {
+    .lazy {
+      &__img {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+      }
+
+      &__loader {
+        display: none;
+      }
+    }
+  }
+
+  &--loading {
+    &.lazy--spinner {
+      .lazy {
+        &__loader {
+          @include loader(40px, 40px, 1px, $green, rgba(0, 0, 0, 0.25));
+        }
+      }
+    }
+  }
+
+  &--color {
+    .lazy {
+      &__loader {
+        transition: opacity 1s ease;
+      }
+
+      &__placeholder {
+        opacity: 1;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  // best solution for now to make sure the intrinsic svg has the right height on mobile, when using picture tag -- add more -xx modifiers for needed breaks
+  &--picture {
+    &-40 {
+      .lazy {
+        &__placeholder {
+          &--desktop {
+            @include break-max(mobile) {
+              display: none;
+            }
+          }
+
+          &--mobile {
+            @include break(mobile) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__img {
+    opacity: 1;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: $z1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+
+    &--translate-in {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    &--fade-in {
+      opacity: 0;
+    }
+  }
+
+  &__loader {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    z-index: 0;
+    position: relative;
+
+    &--hidden {
+      display: none !important;
+    }
+  }
+
+  &__placeholder {
+    display: block;
+    width: 100%;
+    opacity: 0;
+    height: auto;
+  }
+}

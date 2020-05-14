@@ -1,0 +1,32 @@
+/*========================================================================
+Helpers
+========================================================================== */
+
+// Asset helpers
+@function asset_url($filename) {
+  @return url('../../assets/#{$filename} ');
+}
+
+@function liquid-var($name) {
+  @return #{'{{ ' + $name + ' }}'};
+}
+
+// Convert px to em
+@function em($px, $base: $default-font-size) {
+  @return ($px / $base) * 1em;
+}
+
+// Convert px to rem
+@function rem($px, $base: $default-font-size) {
+  @return ($px / $base) * 1rem;
+}
+
+// Get raw value
+@function get-value($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+// Covert lineheight px to unitless
+@function lh($line-height, $font-size) {
+  @return get-value($line-height / $font-size);
+}
