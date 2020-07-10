@@ -2,9 +2,6 @@
 
 A fresh start for your new Shopify project.
 
-###Code repository
-`https://github.com/Wondersauce/wondersauce-shopify-boilerplate`
-
 ### Dependencies
 
 - NodeJS: `https://nodejs.org/en/`
