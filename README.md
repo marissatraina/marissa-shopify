@@ -2,8 +2,6 @@
 
 A fresh start for your new Shopify project.
 
-Cururently based off "Debut" Shopify theme.
-
 ###Code repository
 `https://github.com/Wondersauce/wondersauce-shopify-boilerplate`
 
