@@ -9,7 +9,7 @@ A fresh start for your new Shopify project.
 
 ### Module bundling
 
-This project usues ParcelJS as module bundler `https://parceljs.org/`
+This project uses ParcelJS as module bundler `https://parceljs.org/`
 
 ### Setup
 
